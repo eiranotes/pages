@@ -1,0 +1,67 @@
+[
+  {
+    "file": "lemon-cake.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/lemon-cake.webp",
+    "source_sha256": "9d096fd7ac3a486e1b118e62b5c58d557b76d2fa6e4ccb8e84b597f920a3e651"
+  },
+  {
+    "file": "lemon-pair.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/lemon-pair.webp",
+    "source_sha256": "6f58c1119509917d2ba152a222332eaeddaa80d5a5800f7824ebb9e6985c267d"
+  },
+  {
+    "file": "blue-flower.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/blue-flower.webp",
+    "source_sha256": "e24a3009c845eb9741ab390a163d143cf1962f7128956fee89610cae3fe5c78a"
+  },
+  {
+    "file": "spring-fox.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/spring-fox.webp",
+    "source_sha256": "6d69c10df6a2c1bd53c40154081f92a8b54ee5e47400112f58e7281822b3d646"
+  },
+  {
+    "file": "spring-blossom.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/spring-blossom.webp",
+    "source_sha256": "af93dee6d13f14e541d381e5e4f4b197468d336c7542c6aaed7854413edf20b9"
+  },
+  {
+    "file": "living-room.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/living-room.webp",
+    "source_sha256": "988983ede856f9d4d6807d70ea6e25599f1d1e3ebfbab4cbb0cf8de46e8d1085"
+  },
+  {
+    "file": "resting-penguin.webp",
+    "source": "Adelie Pages/site/sol/assets/img/stickers/resting-penguin.webp",
+    "source_sha256": "4f536bbdc562f11097eb53d21950d18e6923b2327e9f9d4865a4ee1db84b6a87"
+  },
+  {
+    "file": "compose.webp",
+    "source": "Adelie Pages/site/sol/assets/img/screens/compose.png",
+    "source_sha256": "b4010fb73dd15ec43b7d4ed00bdd878003a095dd257efd0c0f247b4e45aaff95"
+  },
+  {
+    "file": "home.webp",
+    "source": "Adelie Pages/site/sol/assets/img/screens/home.png",
+    "source_sha256": "db89d7c17914369d6a762bfae3cca542bcd6136f6fd5559175a1a3e694ac530f"
+  },
+  {
+    "file": "pages.webp",
+    "source": "Adelie Pages/site/sol/assets/img/screens/pages.png",
+    "source_sha256": "f3d4ffe678eef8c0c1ca740b0bc1d1a0ad062885ade0371fb532ebb071c806c2"
+  },
+  {
+    "file": "lemon-page.webp",
+    "source": "Adelie Pages/site/sol/assets/img/editorial/lemon-page.png",
+    "source_sha256": "d113bbf8214f9b5118a6494748a280d4fa73f4b7f5a69a47ead128c91f21973c"
+  },
+  {
+    "file": "woodfree-white.webp",
+    "source": "Adelie Pages/site/sol/assets/img/editorial/woodfree-white.png",
+    "source_sha256": "35a66e719066cbfe0600c0a63d1a2dbf3591ecf779013c170b64e700c8376006"
+  },
+  {
+    "file": "app-icon.webp",
+    "source": "Adelie Pages/site/sol/assets/img/brand/app-icon.png",
+    "source_sha256": "3b54e0a473bdb8e267e0113349d58cc587350013921041b1e1c53eba6508ea96"
+  }
+]
