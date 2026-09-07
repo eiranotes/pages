@@ -18,3 +18,10 @@
 Actions run 34167129698 passed; HTTPS returned HTTP/2 200.
 Live browser verified the correct heading and no broken loaded images.
 URL: https://app.adeliedraw.com/pages-showcase/
+
+## Copy and header refinement
+
+PASS: static checker, JS syntax, diff whitespace check.
+Desktop screenshot confirms app icon and indigo title; computed title color rgb(18,63,141).
+320px and 390px document widths match the viewport; 320px header inspected visually.
+Enter opens the saved-page FAQ; Spring Fox selection shows its expanded description.

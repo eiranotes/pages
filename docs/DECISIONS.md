@@ -7,3 +7,7 @@ static introduction independent of app architecture and avoid new production dep
 Use only existing illustration derivatives, page examples and non-personal QA app captures.
 Do not claim store availability, paid product pricing or planned cloud features.
 Existing pack approvals and rights are not changed by this marketing implementation.
+
+Header refinement: reuse the already-published app-icon.webp without recoloring artwork.
+The wordmark uses the app indigo token. On narrow screens, navigation moves below the brand.
+Detailed copy explains current on-device editing and image sharing; it does not promise cloud sync or downloadable templates.
