@@ -4,4 +4,4 @@
 - [x] Build standalone introduction and collection interaction.
 - [x] Validate static references and JavaScript.
 - [x] Check desktop, mobile rendering and keyboard selection.
-- [ ] Confirm independent public deployment response.
+- [x] Confirm independent public deployment response: HTTPS 200; Actions 34167129698 successful.

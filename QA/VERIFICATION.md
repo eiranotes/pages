@@ -12,3 +12,9 @@
 - A full-page browser capture produced stitching duplicates; excluded from visual
   evidence. Viewport captures and live DOM were used for verification.
 - No physical-device or app-release checks: this task only changes the standalone site.
+
+## Deployment
+
+Actions run 34167129698 passed; HTTPS returned HTTP/2 200.
+Live browser verified the correct heading and no broken loaded images.
+URL: https://app.adeliedraw.com/pages-showcase/

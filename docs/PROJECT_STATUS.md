@@ -6,3 +6,5 @@ Static site; no third-party runtime dependencies, tracking, account forms, or fa
 Deployment: separate eiranotes/pages-showcase repository, public/ artifact only.
 Verification and deployment evidence are recorded in QA/VERIFICATION.md.
 Remaining: real store destination can be added when app launch is authorized.
+
+Live: https://app.adeliedraw.com/pages-showcase/ (HTTPS 200, verified 2026-09-08 KST).
