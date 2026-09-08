@@ -63,5 +63,19 @@
     "file": "app-icon.webp",
     "source": "Adelie Pages/site/sol/assets/img/brand/app-icon.png",
     "source_sha256": "3b54e0a473bdb8e267e0113349d58cc587350013921041b1e1c53eba6508ea96"
+  },
+  {
+    "file": "LINESeedKR-Rg.woff2",
+    "source": "https://app.adeliedraw.com/pages/assets/fonts/LINESeedKR-Rg.woff2",
+    "sha256": "ba38640575bcec4999055912a921c827f4d38007e640e86b063a5b3a999ca476",
+    "license": "OFL-LINESeedKR.txt",
+    "coverage": "Korean full Unicode ranges per eiranotes/pages README"
+  },
+  {
+    "file": "LINESeedKR-Bd.woff2",
+    "source": "https://app.adeliedraw.com/pages/assets/fonts/LINESeedKR-Bd.woff2",
+    "sha256": "86ee9c01a0f6c0c3978505beb7f49baf4b18be3f0f0a2480aceca55ffc647f06",
+    "license": "OFL-LINESeedKR.txt",
+    "coverage": "Korean full Unicode ranges per eiranotes/pages README"
   }
 ]

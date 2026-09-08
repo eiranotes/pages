@@ -1,17 +1,117 @@
 'use strict';
-const packs = {
- lemon: {main:'lemon-cake', accent:'lemon-pair', alt:'레몬 파운드 케이크 스티커', accentAlt:'레몬 조각 스티커', copy:'상큼한 레몬 한 조각, 달콤한 오후 한 장. 케이크와 레몬 모티프로 간식 사진 옆을 꾸미거나, 짧은 안부에 산뜻한 기분을 더해보세요.'},
- home: {main:'living-room', accent:'living-room', alt:'고양이와 아늑한 거실을 그린 홈스윗홈 스티커', accentAlt:'', copy:'느긋한 고양이와 함께, 집에서 보내는 하루. 포근한 집 안 풍경을 담은 그림으로 주말의 기록이나 나만의 작은 휴식 페이지를 꾸며보세요.'},
- fox: {main:'spring-fox', accent:'spring-blossom', alt:'봄여우 스티커', accentAlt:'봄꽃 스티커', copy:'작은 여우가 데려온, 내 페이지 위의 봄. 여우와 꽃 그림을 산책 사진이나 가벼운 메모에 곁들여, 오래 간직하고 싶은 봄날을 남겨보세요.'}
-};
-document.querySelectorAll('[data-pack]').forEach(button => {
- button.addEventListener('click', () => {
-  const pack = packs[button.dataset.pack];
-  document.querySelectorAll('[data-pack]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-  const main = document.getElementById('pack-main');
-  const accent = document.getElementById('pack-accent');
-  main.src = `assets/${pack.main}.webp`; main.alt = pack.alt;
-  accent.src = `assets/${pack.accent}.webp`; accent.alt = pack.accentAlt; accent.hidden = button.dataset.pack === 'home';
-  document.getElementById('pack-copy').textContent = pack.copy;
- });
-});
+
+// Static links and all published content remain available without JavaScript.
+const normalize = value => value.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
+document.querySelectorAll('[data-enhanced]').forEach(element => { element.hidden = false; });
+
+const packGrid = document.getElementById('pack-grid');
+if (packGrid) {
+  const cards = Array.from(packGrid.querySelectorAll('.pack-card'));
+  const search = document.getElementById('pack-search');
+  const filters = Array.from(document.querySelectorAll('[data-category]'));
+  const more = document.getElementById('pack-more');
+  const result = document.getElementById('pack-result');
+  const empty = document.getElementById('pack-empty');
+  let category = '';
+  let limit = 6;
+
+  function render() {
+    const terms = normalize(search.value).split(' ').filter(Boolean);
+    const matches = cards.filter(card => {
+      const text = normalize(card.dataset.search);
+      return (!category || card.dataset.tags.split('|').includes(category)) && terms.every(term => text.includes(term));
+    });
+    cards.forEach(card => { card.hidden = true; });
+    matches.slice(0, limit).forEach(card => { card.hidden = false; });
+    result.textContent = `${matches.length}개의 스티커팩${matches.length > limit ? ` · ${limit}개 표시` : ''}`;
+    empty.hidden = matches.length !== 0;
+    more.hidden = matches.length <= limit;
+    more.textContent = `팩 더 보기 (${Math.min(6, Math.max(0, matches.length - limit))}개)`;
+    filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
+  }
+  search.addEventListener('input', () => { limit = 6; render(); });
+  filters.forEach(button => button.addEventListener('click', () => {
+    category = button.dataset.category;
+    limit = 6;
+    render();
+  }));
+  more.addEventListener('click', () => {
+    const previouslyVisible = cards.filter(card => !card.hidden);
+    limit += 6;
+    render();
+    const firstNew = cards.find(card => !card.hidden && !previouslyVisible.includes(card));
+    firstNew?.querySelector('a').focus();
+  });
+  document.getElementById('pack-reset').addEventListener('click', () => {
+    search.value = '';
+    category = '';
+    limit = 6;
+    render();
+    search.focus();
+  });
+  render();
+}
+
+const stickerSearch = document.getElementById('sticker-search');
+if (stickerSearch) {
+  const cells = Array.from(document.querySelectorAll('.sticker-cell'));
+  function filterStickers() {
+    const query = normalize(stickerSearch.value);
+    cells.forEach(cell => { cell.hidden = !normalize(cell.dataset.name).includes(query); });
+    const count = cells.filter(cell => !cell.hidden).length;
+    document.getElementById('sticker-result').textContent = query ? `${cells.length}개 중 ${count}개` : `전체 ${count}개`;
+    document.getElementById('sticker-empty').hidden = count !== 0;
+  }
+  stickerSearch.addEventListener('input', filterStickers);
+  document.getElementById('sticker-reset').addEventListener('click', () => {
+    stickerSearch.value = '';
+    filterStickers();
+    stickerSearch.focus();
+  });
+}
+
+const viewer = document.getElementById('sticker-viewer');
+if (viewer && typeof viewer.showModal === 'function') {
+  const links = Array.from(document.querySelectorAll('.sticker-link'));
+  const picture = document.getElementById('viewer-image');
+  const previous = document.getElementById('viewer-prev');
+  const next = document.getElementById('viewer-next');
+  const error = document.getElementById('viewer-error');
+  let selection = [];
+  let index = 0;
+  let opener = null;
+
+  function showSticker() {
+    const link = selection[index];
+    error.hidden = true;
+    picture.hidden = false;
+    picture.alt = link.dataset.name;
+    picture.src = link.href;
+    document.getElementById('viewer-name').textContent = link.dataset.name;
+    document.getElementById('viewer-position').textContent = `${index + 1} / ${selection.length}`;
+    previous.disabled = index === 0;
+    next.disabled = index === selection.length - 1;
+  }
+  links.forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    opener = link;
+    selection = links.filter(item => !item.closest('.sticker-cell').hidden);
+    index = selection.indexOf(link);
+    showSticker();
+    viewer.showModal();
+    document.body.classList.add('viewer-open');
+  }));
+  previous.addEventListener('click', () => { if (index > 0) { index--; showSticker(); } });
+  next.addEventListener('click', () => { if (index < selection.length - 1) { index++; showSticker(); } });
+  viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('close', () => {
+    document.body.classList.remove('viewer-open');
+    opener?.focus({ preventScroll: true });
+  });
+  viewer.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' && index > 0) { event.preventDefault(); index--; showSticker(); }
+    if (event.key === 'ArrowRight' && index < selection.length - 1) { event.preventDefault(); index++; showSticker(); }
+  });
+  picture.addEventListener('error', () => { picture.hidden = true; error.hidden = false; });
+}

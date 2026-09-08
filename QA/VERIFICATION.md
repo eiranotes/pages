@@ -25,3 +25,23 @@ PASS: static checker, JS syntax, diff whitespace check.
 Desktop screenshot confirms app icon and indigo title; computed title color rgb(18,63,141).
 320px and 390px document widths match the viewport; 320px header inspected visually.
 Enter opens the saved-page FAQ; Spring Fox selection shows its expanded description.
+
+## Three-site synthesis and catalogue
+
+- Compared Sol local HTML/CSS/JS, Claude live HTML/CSS/JS and prior showcase a78459f.
+  Reference screenshots and snapshot source are in comparison/; analysis is in docs.
+- `python3 check_site.py`: PASS for four pages, three packs, 99 stickers, every local image/font/link,
+  cross-page anchors, unique IDs and exact generated-data consistency.
+- `node --check public/app.js`: PASS.
+- Search 고양이 → one pack; combine 꽃·자연 → zero; reset → all three.
+- 18-pack QA fixture: initial six, more → twelve, more → eighteen; unique query → one.
+  Fixture generator is tracked; fixture output is ignored and outside public/.
+- Lemon, Home and Fox open correct 25/39/35-member pages and their own enlarged artwork.
+- Next updates image/name/count; first previous and last next disabled; Esc restores trigger focus.
+- Sticker-name search empty state and reset work. Native links provide non-JS fallback.
+- 390px main and detail: no horizontal document overflow, 2-column packs / 3-column stickers.
+  320px main and detail: no horizontal document overflow. Mobile dialog inspected visually.
+- Font subsets retain full Korean ranges according to upstream public README; 6.36MB → 0.87MB.
+- The source export uses only exact currently showcased app pack members, with source hashes in
+  catalog-provenance.json. No runtime catalog, source-only pack or app release changes.
+- 768px pack/detail document widths match the viewport; main grid resolves to two 340px columns.

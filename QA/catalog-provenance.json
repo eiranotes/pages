@@ -1,0 +1,596 @@
+[
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_lemon_slice_large_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_slice_large.webp",
+    "sha256": "515810ed163ddcf363101fa753b02f04112a09b63b66b7a0c0d7e350786076c5"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_corner_left_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_corner_left.webp",
+    "sha256": "71eed8e2929ba7e0f7cb098a4f4a9c975ac3f5fba9b6e312298d4cc8d62a73d7"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_corner_right_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_corner_right.webp",
+    "sha256": "0f0b41e2531f568e15c02702fa8740409320b6d9038d66a21fb90d6052ca3717"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_pair_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_pair.webp",
+    "sha256": "794f427c487331818ef5e711cea02242a252cdb75db1a4902d22644fe31a7407"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_penguin_lemon_bottle_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/penguin_lemon_bottle.webp",
+    "sha256": "6edca0203e14e303e1c3d863ef98121475b97d965877a440fc59a33b92ad60da"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_sunflower_bouquet_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/sunflower_bouquet.webp",
+    "sha256": "2bb5ce84d3c740499be7b895cc808ada5983dcdbc641d4a7c2625bee1ec3cac3"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_sprig_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_sprig.webp",
+    "sha256": "0d61b2b09359fdc2104b276ab3d74e0ecaecc01d1ea531c6f08b66d82e49606a"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_lemon_slice_small_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_slice_small.webp",
+    "sha256": "6aaf1a882ef1eab2b6d548da305e2ee9dfeff1f3457d048b54266e2fb2394b82"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_resting_penguin_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/resting_penguin.webp",
+    "sha256": "4f536bbdc562f11097eb53d21950d18e6923b2327e9f9d4865a4ee1db84b6a87"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_yellow_butterfly_front_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/yellow_butterfly_front.webp",
+    "sha256": "89efb07e75b8f34b14ed2100290e5f8aae5dd905ac7ba682826638128ed63caf"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_bouquet_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_bouquet.webp",
+    "sha256": "76d9ea777cc6139aea70db245467b260f5233121aab7ff987461f215be815802"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_penguin_lemon_friends_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/penguin_lemon_friends.webp",
+    "sha256": "c6bfff3636c84405e24f14893d5d58732b319ef63c99be8a26d450d51e101aa0"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_yellow_butterfly_small_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/yellow_butterfly_small.webp",
+    "sha256": "0eb8794ec06d1008032dff6e289596293032a17cf38adf8b731aa86e5388b059"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_penguin_lemon_tea_party_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/penguin_lemon_tea_party.webp",
+    "sha256": "9e3fd96755aca2a0d9d980637c0eea14c608fe8bb37b0003d407b8b35ecddc16"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_garland_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_garland.webp",
+    "sha256": "7b6a65ce5a9ca40f5815cbbe55751f3dbaad78fc54611da6e4e881259da5b876"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_cake_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_pound_cake.webp",
+    "sha256": "9d096fd7ac3a486e1b118e62b5c58d557b76d2fa6e4ccb8e84b597f920a3e651"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_lemon_pair_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_pair.webp",
+    "sha256": "6f58c1119509917d2ba152a222332eaeddaa80d5a5800f7824ebb9e6985c267d"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_white_butterfly_outline_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/white_butterfly_outline.webp",
+    "sha256": "a41ed61802f04dfae915d332c2d2b795602aa98e4ade9cb58f3644b72b72c9c3"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_penguin_sunflower_bouquet_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/penguin_sunflower_bouquet.webp",
+    "sha256": "3aa1533f6b0b54c23f8cc313b9d16eb6d8d54b2e41e944ab7090115f2745dae2"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_single_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_single.webp",
+    "sha256": "e24a3009c845eb9741ab390a163d143cf1962f7128956fee89610cae3fe5c78a"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_blue_flower_border_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/blue_flower_border.webp",
+    "sha256": "04d478b418321af1f0073d03ca402ab6a0d937b8d8bb066a9e745251cdb618d3"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_lemon_trio_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_trio.webp",
+    "sha256": "5ce590862ac163f73563aad39646f1dd4c32edf6476fe8dcc148bba6742a9580"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_penguin_sunflower_friends_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/penguin_sunflower_friends.webp",
+    "sha256": "07f2f4fbe4a2223b3a05f8ef4ca13eff6c3760c5a2637543361d5516d64871fc"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_lemon_wedge_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/lemon_wedge.webp",
+    "sha256": "0ac5640b40daafcb82955d9c7cef4da9b8d2a7e6d21e2194b9b525ce6d496a7e"
+  },
+  {
+    "pack": "adelie_202608_lemon_pound_cake_v001",
+    "asset": "202608_lemon_pound_cake_sleeping_penguin_001",
+    "source": "assets/AdeliePacks/202608_lemon_pound_cake/stickers/sleeping_penguin.webp",
+    "sha256": "39a38364fe6c813dd6451e164019f59eb49de97192d6d257f951f81135bffcdd"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_woven_basket_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/woven_basket.webp",
+    "sha256": "3c9192b87169b53b0eec48c6830b59c47edea6d41bf1b5319ca36b8021ee96e4"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_wall_sconce_cream_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/wall_sconce_cream.webp",
+    "sha256": "1ccf463d301f23173326baa227f703f1553dd814d5e7241c899bb4352c734b53"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_desk_candle_frame_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/desk_candle_frame.webp",
+    "sha256": "2abb66e4b0cfe2902bb6f4751ff54b3e0fa0a0de780c5768ff29b8d8f2929d8e"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_sleeping_cats_cushion_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/sleeping_cats_cushion.webp",
+    "sha256": "80647903f37882bfdd3d0417dc7b0ffd50fe889e3b2556a786c52c68a2598213"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_mini_candle_01_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/mini_candle_01.webp",
+    "sha256": "837aee4d6ea69001e9a39d9bf3ef1d6d548b0f3d10f9018c623c646541d6ecf6"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_arched_home_cat_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/arched_home_cat.webp",
+    "sha256": "49ff52b53f907a3fd0f9467f20f61ba1472d5e22916e85f37c4efa5f6cb685ab"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_berry_branch_vase_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/berry_branch_vase.webp",
+    "sha256": "82c233a68b9c34d6c29ef834ab18fe612225ba58de9255524cff3b60b4c85c9d"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_yellow_fruit_01_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/yellow_fruit_01.webp",
+    "sha256": "d6045b863d0fa90590b7640befa93167913aa84698a48ec43fd48065a4d93d0a"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_fruit_basket_01_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/fruit_basket_01.webp",
+    "sha256": "c2c2fae40383a2c389ace2fbbfaf4fa758f6c578450658d3a7471b4f03839bca"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_stretching_tabby_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/stretching_tabby.webp",
+    "sha256": "06cbea73beac769116c23850e4ee0effdbc4e06a7e2227baeb8f662d8788d5e1"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_round_table_lamp_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/round_table_lamp.webp",
+    "sha256": "17055ee847968ae3c0e3de02d88a8e0991b1da883bc6f8ef6033ac3e7d721eb4"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tabby_back_pose_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tabby_back_pose.webp",
+    "sha256": "785004ad3c07cd388d52bd7ea214c0407a40eb94d7f836fd537c9c9f20074ed4"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_green_fruit_02_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/green_fruit_02.webp",
+    "sha256": "de50282dc5f92bd074c7b9725ef1a4dee37fd25393a666502c3566b537046ac1"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_wall_sconce_yellow_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/wall_sconce_yellow.webp",
+    "sha256": "856746edacdf3597b7398f11b91d03f4f93d3e1f20f3bfe0a0c2621d267b4e4c"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_mantel_clock_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/mantel_clock.webp",
+    "sha256": "e1e123a71387f0432e0cac0b76d6d21bd48c78c8e1e4e88e988c12d9a7950085"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tulip_side_table_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tulip_side_table.webp",
+    "sha256": "d74cc70dab7fc4c42d330dbe64372ffed8245f9a6a4ba3bc83b9f35a66663bb7"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_coffee_books_green_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/coffee_books_green.webp",
+    "sha256": "9b19e61bc9059319c2a34aaa29a1540f21246125446411d985c9a818988a8528"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_fruit_bowl_brown_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/fruit_bowl_brown.webp",
+    "sha256": "71fa5c934cea0b0a4188d5f8e6c1339e8edcba6249cb8255d071ec4a651b5538"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_living_room_cats_scene_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/living_room_cats_scene.webp",
+    "sha256": "988983ede856f9d4d6807d70ea6e25599f1d1e3ebfbab4cbb0cf8de46e8d1085"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_lamp_books_green_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/lamp_books_green.webp",
+    "sha256": "f51e0043b2bc4a8560cb9f4afabccdedc90adfc0cb7b4375c0de723e9d671ecd"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_sitting_tabby_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/sitting_tabby.webp",
+    "sha256": "51ed6bed6d997e3d00854852fd09609b391a740d0c828af442db2453d331380e"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_small_table_lamp_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/small_table_lamp.webp",
+    "sha256": "a288e90d9d3bf22bb7edab352d2be97b5294a7ab64caccca843bee8820dc5ac5"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_floor_lamp_cream_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/floor_lamp_cream.webp",
+    "sha256": "bdbf7f012c2b3a958ef2b6972a8e6e4f108e6a8a58ad796c974afb2911805483"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_storage_box_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/storage_box.webp",
+    "sha256": "477727b5d1176a2a74e5aaa5ac5e5b4770d742f300beb471ca778a6fb56f0db8"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_rolling_cart_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/rolling_cart.webp",
+    "sha256": "06856425928bf64558ee05b9a1d347452036065257ca38ad87bf6b8203be8cbe"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_black_phone_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/black_phone.webp",
+    "sha256": "8491d52f2f40106524e5aebdfb279acdeb0dfe538a804973bf131303c6c9a40b"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_bedtime_cat_scene_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/bedtime_cat_scene.webp",
+    "sha256": "34bcaaf8180e44b00e377389b1e92fc33d97a6b23e3412fb93b1dcdaa780ac04"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tulip_sprig_01_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tulip_sprig_01.webp",
+    "sha256": "587556a25f1d3289f16718d9afdd23b02ccbd182c3ebabbaab1a818d95194c35"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tomato_tray_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tomato_tray.webp",
+    "sha256": "cfc26275c1c8774970c8f9abf9ec8921f2cf7d4def2a7b7a5d030361f30b1eb5"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_candle_side_table_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/candle_side_table.webp",
+    "sha256": "1ecae2d7d4207383b01b91759d5fb7015e271ac8b35135dd7b37fa9a27811e5d"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_lamp_books_tray_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/lamp_books_tray.webp",
+    "sha256": "9952ebb5d062ae2a8d0e343ac3ff531fbaf122e596385bc434656811df0d4219"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_paw_rug_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/paw_rug.webp",
+    "sha256": "de32db128acd19dea255793e7258ae2749c743e00dd325a69c096a8dd0ae3a00"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tulip_vase_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tulip_vase.webp",
+    "sha256": "2fd8c2fdac5ef85e590ca5688ac3502a5e6473c6affac3132d11a0ce318d417b"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_reclining_tabby_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/reclining_tabby.webp",
+    "sha256": "bab8c3b73ff247dbac2a51ace2aefe82fb7964415135d6bb8e712f7455a2ed5c"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_flower_window_panel_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/flower_window_panel.webp",
+    "sha256": "3a301847c3305f1dce30113472eeac4be378fcba76adbcbd5d09b27a9675cbaf"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_tabby_handbag_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/tabby_handbag.webp",
+    "sha256": "3f03f6acf124a638f028985df863bc731e015bc613f3edad13b447f497bd6520"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_cream_cat_bread_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/cream_cat_bread.webp",
+    "sha256": "01113b8d10dc619c2787add4ce7b7858a9bd504eb10fb5659965cb8a9a84a12a"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_woven_planter_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/woven_planter.webp",
+    "sha256": "e6e2cfcdf46fac402ad0123df12cfa223c1b2af7ee58695e78e7d86a8a683f19"
+  },
+  {
+    "pack": "adelie_202608_home_sweet_home_digital_v001",
+    "asset": "202608_home_sweet_home_digital_coffee_books_brown_001",
+    "source": "assets/AdeliePacks/202608_home_sweet_home_digital/stickers/coffee_books_brown.webp",
+    "sha256": "a07411b9cf44173ea7d82830f5c943f69f4d039ada4658042675ff022f8cab9c"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_01_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_01.webp",
+    "sha256": "713d2fdc4bd80854b13822d33b0d26a9aab1a11acccef5bd71f576bdd2d49428"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_02_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_02.webp",
+    "sha256": "b9e05eb108bc17e5bcf3b53a91358a0654dfcf4e223c424dec2819d0ce26b7d2"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_01_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_01.webp",
+    "sha256": "6d69c10df6a2c1bd53c40154081f92a8b54ee5e47400112f58e7281822b3d646"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_02_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_02.webp",
+    "sha256": "943cea8fe13176d67b5e3caeae0e1253fe5a8d19c823326e4da25d03ac39293e"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_03_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_03.webp",
+    "sha256": "8a02b79adbf8b99e1039fafef7f3baa9b3199b890320fca2608ed01594bbbfb3"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_04_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_04.webp",
+    "sha256": "140bf82c716426093fb208b2afa81eceb8868fce1ef155bc551874bb48a24826"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_03_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_03.webp",
+    "sha256": "af93dee6d13f14e541d381e5e4f4b197468d336c7542c6aaed7854413edf20b9"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_04_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_04.webp",
+    "sha256": "aa52ae69ffb12ecc8cc34176bad95490065261c8a1bec03579507bc75766e0ed"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_05_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_05.webp",
+    "sha256": "11f82b09db951163555088e23d70cde0979e9da80bc6935ae8953a296cfa7295"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_05_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_05.webp",
+    "sha256": "3cdfacdcf42b1ce24b363aa967a586e2a917951d152bdebf4589493bda623997"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_06_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_06.webp",
+    "sha256": "05922a9133032f6474c85ee0ff6edaf0480cc4759319ed38b02833baf69d6897"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_07_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_07.webp",
+    "sha256": "402df8f94867303222a5d9fe43e20372dc64ad9cf260fa058d34136a2d2c67be"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_06_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_06.webp",
+    "sha256": "4766cead752acf499c77074e3ab09919ecae4e6acc1510f3f00a07b2c92bde05"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_08_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_08.webp",
+    "sha256": "d0117aa75742d6377e7c3e7fdc457fd0285004e91d3bb7cc3c0e7052e5ff4f6b"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_09_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_09.webp",
+    "sha256": "f66f98fc2e41f9f276f783ff1672fb35018dca7f8776e5f768619f0399fec56d"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_10_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_10.webp",
+    "sha256": "8ce822a4bc607bd9b48de438c2f61171f0fc3be43951d35e4522675bc04ecf36"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_07_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_07.webp",
+    "sha256": "abc8834071e1225a04fa982620697f934e1f80e9d356a5a58985a95ad7aaa136"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_11_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_11.webp",
+    "sha256": "ea60c305f0de329f222756a5977c0318ae0f56605f55394ce4cc9c8f69128ad6"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_12_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_12.webp",
+    "sha256": "9ca3e08ae34782309449a5f24c9070ac9d79dc13bfb1aa531e8eb662221eb0ce"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_13_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_13.webp",
+    "sha256": "2c019ce15c903d6a81a3495b8e93d2c6fd5c7358b861088bfa98a287023820ad"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_09_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_09.webp",
+    "sha256": "ed07c60e37f5aa4765c374f86a47c5bde51694d8f126cf7d2ec164a1986be372"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_14_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_14.webp",
+    "sha256": "c537149d87166cd2e1655e6ea85ea87c53c1aac5ea380a68d178d70f6bf55264"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_10_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_10.webp",
+    "sha256": "2b021fa376b59290c35759856939c9e9a53fb14479d6c9f4ab2bb1986352b990"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_15_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_15.webp",
+    "sha256": "1a150190a709cccd6a9d43f1755ab83f2348c52f56c94e8d3792dd058611be55"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_16_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_16.webp",
+    "sha256": "9fd7353e5dbdc7012e70eedc6fc6d621429bb56709292ff429ef3def086d1dcc"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_17_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_17.webp",
+    "sha256": "f946c51ee9d527b8bbfe465c9b407e8e3cbc0d3b5e1659518ffc0c1d358afc2f"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_18_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_18.webp",
+    "sha256": "465bcb35d705a1547b148caff3b525da68b33891a33ae5679cc757e666dcc2e2"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_19_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_19.webp",
+    "sha256": "26523521a88d8d0cc65594aed27ed1f038b0ef2bbf3cf26295f57f78dfe95f5a"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_12_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_12.webp",
+    "sha256": "af6fa243fdbd2708026cce07c0f67afed07d507ee2c4614987d9399547f8d266"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_20_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_20.webp",
+    "sha256": "a653224d546d247807ff7f9e0fe714f4d146be8e90642b7464252a3053e2c8d9"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_21_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_21.webp",
+    "sha256": "fbdcaae11cbb05c74067c03ff7becb2bbea3856c30b627fcdea29bcd4fb00bbc"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_14_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_14.webp",
+    "sha256": "81ae7fd3bbe4443106f8820ce1b578a18d0a97db134fcc5272901cba8e639bbb"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_blossom_16_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_blossom_16.webp",
+    "sha256": "ece0319edc20c410c529e1c1b691537f0f68348186e28b6e81dda62e5d201756"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_22_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_22.webp",
+    "sha256": "f8e1835b536692bf5aecd0ea34b271bc9e96291ee2e1b37307257dcd7b2ba634"
+  },
+  {
+    "pack": "adelie_202608_spring_fox_renewal_v001",
+    "asset": "202608_spring_fox_renewal_spring_fox_pose_23_001",
+    "source": "assets/AdeliePacks/202608_spring_fox_renewal/stickers/spring_fox_pose_23.webp",
+    "sha256": "08707069b3aab0d7d4afddb87f4b21686bca427319e3a766a93bdc9f327c4463"
+  }
+]
