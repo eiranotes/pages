@@ -3,139 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#123452">
+<meta name="theme-color" content="#f7f9fb">
 <title>삿포로 9/12–15 일정</title>
-<meta name="description" content="2026년 9월 12–15일 삿포로 여행 모바일 동선표">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<style>
-:root{--n:#123452;--i:#122236;--m:#6d7c8b;--l:#dce7ef;--s:#f4faff;--dash:#426d8b;--ok:#2d8b68}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--s)}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--i);background:linear-gradient(#eaf7ff,#f7fbff 240px);line-height:1.45}button,a{font:inherit}button{color:inherit}.app{max-width:760px;margin:auto;padding:14px 14px 64px}.hero{background:var(--n);color:#fff;border-radius:26px;padding:22px 20px;margin-top:env(safe-area-inset-top);box-shadow:0 12px 32px #1234521c;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:190px;height:190px;border:28px solid #ffffff10;border-radius:50%;right:-70px;top:-85px}.ey{font-size:11px;letter-spacing:.13em;opacity:.68}.hero h1{font-size:30px;line-height:1.08;letter-spacing:-.05em;margin:8px 0 16px}.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.ap:last-child{text-align:right}.ap b{display:block;font-size:22px}.ap span,.base{font-size:11px;opacity:.7}.plane{font-size:18px}.base{margin-top:15px;padding-top:12px;border-top:1px solid #ffffff22}.tabs{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:0 -14px;padding:9px 14px;background:#f4faffed;backdrop-filter:blur(12px);border-bottom:1px solid #1234520d}.tabs button{border:1px solid var(--l);border-radius:13px;background:#fff;padding:7px 2px;font-size:11px;color:var(--m);font-weight:700}.tabs b{display:block;color:var(--i);font-size:14px}.tabs .on{background:var(--n);border-color:var(--n);color:#c7deee}.tabs .on b{color:#fff}.alert{margin:14px 0 14px;padding:14px 16px;background:#fff;border:1px solid #e1edf6;border-radius:18px;box-shadow:0 8px 20px #12345208}.alert b{display:block;margin-bottom:5px}.route{margin:0 0 20px;padding:16px;background:#fff;border:1px solid #e1edf6;border-radius:22px;box-shadow:0 12px 28px #1234520a}.routehead{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:10px}.routehead small{display:block;color:var(--m);font-size:11px;letter-spacing:.12em}.routehead h2{margin:4px 0 6px;font-size:23px;line-height:1.15;letter-spacing:-.03em}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--m)}.legend i{display:inline-block;width:26px;height:0;border-top:4px solid var(--dash);vertical-align:middle;margin-right:6px}.legend i.solid{border-top-style:solid;border-top-color:var(--ok)}.legend i.dash{border-top-style:dashed}.routehint{margin-top:6px;font-size:12px;color:var(--m)}.routebtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.routebtns button{border:1px solid var(--l);background:#fff;border-radius:12px;padding:10px 12px;font-weight:700}.routebtns .primary{background:var(--n);border-color:var(--n);color:#fff}#routeMap{height:320px;border-radius:18px;overflow:hidden;border:1px solid var(--l);background:#eef4f8}.routefoot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--m);margin-top:10px}.routefoot b{color:var(--i)}.day{margin:0 0 22px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}.head small{display:block;font-size:11px;color:var(--m);letter-spacing:.12em}.head h2{margin:4px 0 0;font-size:24px;letter-spacing:-.04em}.head em{font-style:normal;color:var(--m);font-size:12px}.prog{height:8px;background:#dfeaf2;border-radius:99px;overflow:hidden;margin-bottom:12px}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--n),#4a8fc8);border-radius:99px;transition:.25s}.line{display:grid;gap:10px}.stop{display:grid;grid-template-columns:68px 1fr;gap:10px;align-items:start}.tm{padding-top:8px;font-weight:800;font-size:16px;letter-spacing:-.03em}.tm small{display:block;color:var(--m);font-size:11px;font-weight:600;letter-spacing:0}.card{background:#fff;border:1px solid #e1edf6;border-radius:20px;padding:14px 14px 12px;box-shadow:0 10px 22px #12345208;transition:.18s}.card.done{border-color:#bee4d5;background:#f8fffc}.top{display:flex;align-items:start;gap:10px}.ck{width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1px solid var(--l);background:#fff;font-weight:800}.card.done .ck{background:var(--ok);border-color:var(--ok);color:#fff}.txt{min-width:0;flex:1}.txt h3{margin:0 0 4px;font-size:17px;line-height:1.25;letter-spacing:-.03em}.meta{color:var(--m);font-size:13px}.tag{align-self:flex-start;border-radius:999px;padding:6px 8px;font-size:10px;font-weight:800;letter-spacing:.08em}.MOVE{background:#e8f0ff;color:#325c9e}.FOOD{background:#fff4e4;color:#8a5a10}.SHOP{background:#ecfff0;color:#2e7a49}.FIX{background:#f1eefb;color:#5b49a8}.note{margin:10px 0 0;padding:10px 12px;border-radius:14px;background:#f7fbff;font-size:12px;color:#516575}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.act{border:1px solid var(--l);background:#fff;border-radius:11px;padding:9px 12px;font-weight:700}.act.primary{background:var(--n);border-color:var(--n);color:#fff}.split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 0 78px}.lane{background:#fff;border:1px dashed #d5e4ef;border-radius:16px;padding:11px 12px;font-size:12px;color:#4c6272}.lane b{display:block;margin-bottom:4px;color:var(--i)}.foot{margin:12px 0 0;color:var(--m);font-size:12px}.num-pin{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;background:#fff;border:2px solid var(--dash);color:var(--dash);box-shadow:0 4px 10px #1234521f}.num-pin.done{background:var(--ok);border-color:var(--ok);color:#fff}.leaflet-popup-content-wrapper{border-radius:14px}.leaflet-popup-content{margin:12px 14px;font-size:13px}@media (max-width:560px){.routehead{flex-direction:column}.routebtns{width:100%;justify-content:stretch}.routebtns button{flex:1}.split{grid-template-columns:1fr;margin-left:0}.stop{grid-template-columns:1fr}.tm{padding-top:0}#routeMap{height:280px}}
-</style>
+<meta name="description" content="2026년 9월 12–15일 삿포로 여행 일정과 날짜별 도심 이동 지도">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="app">
-  <section class="hero">
-    <div class="ey">SAPPORO TRIP · 2026.09.12–09.15</div>
-    <h1>삿포로<br>모바일 일정표</h1>
-    <div class="flight">
-      <div class="ap"><span>출발</span><b>ICN</b><span>09:00</span></div>
-      <div class="plane">✈︎</div>
-      <div class="ap"><span>도착</span><b>CTS</b><span>12시대 예정</span></div>
+<div class="shell">
+  <header class="mast">
+    <div><h1>삿포로 9/12–15</h1></div>
+    <div class="mast-meta">
+      <span><b>ICN 09:00 → CTS</b>9월 12일</span>
+      <span><b>CTS 11:00 → ICN</b>9월 15일</span>
     </div>
-    <div class="base">숙소 · <b>삿포로 스트림 호텔</b> / 귀국편 · 15일 신치토세 11:00 출발</div>
+  </header>
+
+  <nav class="day-tabs" aria-label="날짜 선택"><div class="day-tabs-inner" id="tabs"></div></nav>
+
+  <section class="day-head">
+    <div><small id="dayEyebrow">SEP 12 · SAT</small><h2 id="dayTitle"></h2></div>
+    <div class="day-sub" id="daySub"></div>
   </section>
 
-  <nav class="tabs" id="tabs"></nav>
-  <aside class="alert"><b>핵심 메모</b> 상단 지도는 날짜별 예상 동선을 점선으로 보여주고, 카드에서 체크(✓)한 도착 지점까지의 구간은 실선으로 바뀝니다.</aside>
-
-  <section class="route">
-    <div class="routehead">
-      <div>
-        <small>DAY MAP</small>
-        <h2 id="routeTitle">12일 예상 동선</h2>
-        <div class="legend"><span><i class="dash"></i>예정 경로</span><span><i class="solid"></i>실제 이동</span></div>
-        <div class="routehint">카드의 ✓를 누르면 방금 간 구간이 실선으로 전환됩니다.</div>
+  <section class="map-section" aria-label="날짜별 이동 지도">
+    <div class="map-tools">
+      <div class="map-legend" id="legend">
+        <span class="legend-item"><i class="legend-line"></i>예정</span>
+        <span class="legend-item"><i class="legend-line done"></i>완료</span>
       </div>
-      <div class="routebtns">
-        <button id="fitRoute">전체 보기</button>
-        <button id="openDayRoute" class="primary">Google 경로 열기</button>
+      <div class="map-actions">
+        <button id="resetMap">도심 전체</button>
+        <button id="googleRoute" class="primary">Google 경로</button>
       </div>
     </div>
-    <div id="routeMap"></div>
-    <div class="routefoot"><span id="routeMeta"><b>예정</b> 0개 장소</span><span id="routeProgress"><b>실제 이동</b> 0개 구간 완료</span></div>
+    <div class="map-wrap">
+      <div id="routeMap"></div>
+      <div class="empty-map" id="mapFallback">지도를 불러오지 못했습니다. Google 경로 버튼을 사용하세요.</div>
+    </div>
+    <div class="map-note"><span id="routeNote"></span><span id="routeCount"></span></div>
   </section>
 
-  <div id="days"></div>
-  <p class="foot"><b>사용법</b> · 일정 카드의 ✓ 체크는 이 기기에 저장됩니다. 개별 카드의 “지도 / 길찾기”는 Google Maps를 엽니다.</p>
-</main>
+  <section class="schedule">
+    <div class="schedule-bar"><h3>일정</h3><span class="schedule-progress" id="scheduleProgress"></span></div>
+    <ol class="schedule-list" id="scheduleList"></ol>
+  </section>
+</div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script>
-const D = [{"id": "d12", "day": "12", "label": "토 · 도착", "title": "도착 + 스스키노 집중", "subtitle": "공항 → 호텔 → 도보 쇼핑", "items": [["09:00", "ICN", "인천 출발", "신치토세공항행", "MOVE", ""], ["12:40", "40분", "칼비플러스 + 키노토야", "공항 국내선 2F · 감자 스낵/포테리코 + 키노토야", "FOOD", "Calbee PLUS New Chitose Airport"], ["13:30", "약 1h", "CTS → 삿포로 스트림 호텔", "JR 삿포로역 → 난보쿠선 스스키노", "MOVE", "SAPPORO STREAM HOTEL", "호텔 공식 안내 기준 공항부터 약 1시간."], ["14:35", "10분", "호텔에 짐 먼저 맡기기", "정식 체크인 15:00", "FIX", "SAPPORO STREAM HOTEL", "사쿠라점 L.O. 때문에 방 체크인은 점심 뒤로."], ["14:45", "~15:40", "로지우라 커리 SAMURAI. 사쿠라점", "스프카레 · 12:00–15:30 / L.O.15:00", "FOOD", "Rojiura Curry SAMURAI Sakura Sapporo", "14:50까지 호텔 도착이 어렵다면 COCONO SUSUKINO점(11:00–23:00)으로 전환."], ["15:50", "20분", "호텔 체크인", "SAPPORO STREAM HOTEL", "FIX", "SAPPORO STREAM HOTEL"], ["16:25", "35분", "모육 삿포로 LOFT", "moyuk SAPPORO 3F · 10:00–21:00", "SHOP", "moyuk SAPPORO Loft"], ["17:05", "25분", "KINOTOYA BAKE 폴타운점", "치즈타르트 + 아이스크림 · 10:00–21:00", "FOOD", "KINOTOYA BAKE Pole Town Sapporo"], ["17:35", "40분", "HUMAN MADE → 센슈안 본점", "휴먼메이드 + 생노스만 · 南3西3 일대", "SHOP", "HUMAN MADE SAPPORO", "생노스만 단품은 센슈안 본점에서 구매."], ["18:20", "5분", "네무로 하나마루 대기 등록", "COCONO SUSUKINO B1F · 11:00–21:00", "FIX", "Nemuro Hanamaru COCONO SUSUKINO", "먼저 웨이팅 걸고 같은 건물에서 장보기."], ["18:30", "대기중", "다이이치 스스키노점", "COCONO B2F · 유바리멜론 + 14일 아침식", "SHOP", "Daiichi Susukino supermarket", "9월 중순은 유바리멜론 막바지. 없으면 다른 홋카이도 적육멜론 확인."], ["19:00", "~20:30", "네무로 하나마루 초밥", "호출 시간에 맞춰 입장", "FOOD", "Nemuro Hanamaru COCONO SUSUKINO"], ["21:00", "야간", "파르페테리아 팔", "締めパフェ · 토 18:00–02:00", "FOOD", "Parfaiteria PaL Sapporo"]]}, {"id": "d13", "day": "13", "label": "일 · 팩토리", "title": "영화 + 팩토리 + 야키니쿠", "subtitle": "건스 / 유미 분리 동선", "items": [["10:35", "출발", "호텔 → 마지산도", "도보 약 12–15분권", "MOVE", "Majisand Sapporo"], ["11:00", "~11:35", "마지산도", "현재 11:00–20:00 · 첫 식사", "FOOD", "Majisand Sapporo", "원래 아침 계획이지만 오픈 시간에 맞춰 브런치."], ["11:40", "~12:10", "삿포로 팩토리로 이동", "도보+지하철 또는 택시", "MOVE", "Sapporo Factory"], ["12:15", "~16:00", "삿포로 팩토리에서 동선 분리", "유나이티드 시네마도 팩토리 단지 내", "SHOP", "United Cinemas Sapporo", "영화 상영시간 확정 후 이 구간만 미세조정.", "split"], ["16:10", "~17:15", "합류 + 스스키노 복귀", "예약 전 여유 확보", "MOVE", "SAPPORO STREAM HOTEL"], ["18:00", "예약", "야키니쿠 다이닝 방정식", "南6西3 · 18:00 예약", "FIX", "Yakiniku Dining Houteishiki Sapporo"], ["19:45", "~21:00", "스스키노 2차 쇼핑", "COCONO / 폴타운 / 다누키코지", "SHOP", "Susukino Sapporo", "20:00 마감 점포부터 먼저."]]}, {"id": "d14", "day": "14", "label": "월 · 러닝", "title": "북쪽 러닝 → 역 → 오도리", "subtitle": "되돌아가기 최소화", "items": [["07:30", "30분", "숙소에서 간단히 먹기", "전날 산 빵·과일·요거트 등", "FOOD", "SAPPORO STREAM HOTEL"], ["08:15", "이동", "홋카이도대학으로 이동", "스스키노 → 삿포로역/북12조", "MOVE", "Hokkaido University Sapporo"], ["08:45", "~10:00", "홋카이도대학 러닝 + 산책", "메인 캠퍼스", "MOVE", "Hokkaido University Sapporo"], ["10:05", "10–15분", "키타노구루메테이로 이동", "대학 → 北11西22 · 택시", "MOVE", "Kita no Gourmet-tei Sapporo"], ["10:20", "~11:40", "키타노구루메테이", "게 / 해산물 · 06:00–17:00", "FOOD", "Kita no Gourmet-tei Sapporo"], ["12:00", "~13:20", "HULIC SQUARE SAPPORO", "New Balance B1F + Patagonia 1F", "SHOP", "Hulic Square Sapporo", "같은 건물: NB 11:00–19:00 / Patagonia 10:00–19:00."], ["13:25", "~15:40", "삿포로역 쇼핑", "스텔라 플레이스 + 시키 마르쉐", "SHOP", "Sapporo Stellar Place", "시키 마르쉐 1F · BIRKENSTOCK 3F · SALOMON은 atmos/ABC-MART 취급점 · ASICS는 스텔라/다이마루 취급점 확인."], ["16:00", "~16:40", "Onitsuka Tiger Sapporo PARCO", "PARCO 1F · 10:00–20:00", "SHOP", "Onitsuka Tiger Sapporo Parco"], ["16:45", "~17:15", "ARC'TERYX 삿포로 브랜드 스토어", "南1西4 · 11:00–20:00", "SHOP", "Arcteryx Sapporo Brand Store"], ["17:20", "~18:20", "라스트민트 팬케이크 & 파르페", "南2西3 · 11:00–19:00", "FOOD", "Last MINT Sapporo", "19:00 마감이라 오도리 쇼핑 직후 이동."], ["18:30", "이후", "호텔 복귀 / 저녁 자유", "스스키노", "MOVE", "SAPPORO STREAM HOTEL"]]}, {"id": "d15", "day": "15", "label": "화 · 귀국", "title": "공항 쇼핑 + 귀국", "subtitle": "CTS 11:00 출발 기준", "items": [["06:30", "출발", "호텔 체크아웃", "비행기 때문에 조기 출발", "FIX", "SAPPORO STREAM HOTEL"], ["06:40", "~07:45", "스스키노 → 신치토세공항", "난보쿠선 → 삿포로역 → JR Rapid Airport", "MOVE", "New Chitose Airport"], ["08:00", "~09:05", "공항 쇼핑 + 아침", "키노토야·센슈안 등 주요 매장", "SHOP", "New Chitose Airport", "마지막 선물 구매와 식사를 이 구간에 집중."], ["09:10", "~10:20", "체크인 · 보안검색 · 출국", "국제선 · 면세구역 추가 쇼핑", "FIX", "New Chitose Airport International Terminal"], ["11:00", "CTS", "신치토세 출발 → 인천", "귀국편", "MOVE", "New Chitose Airport"]]}];
-const COORDS = {"Calbee PLUS New Chitose Airport": [42.78794, 141.68126], "New Chitose Airport": [42.78714, 141.68129], "New Chitose Airport International Terminal": [42.78788, 141.6806], "SAPPORO STREAM HOTEL": [43.05528, 141.35453], "Rojiura Curry SAMURAI Sakura Sapporo": [43.05688, 141.34978], "moyuk SAPPORO Loft": [43.05893, 141.35459], "KINOTOYA BAKE Pole Town Sapporo": [43.05759, 141.35422], "HUMAN MADE SAPPORO": [43.05653, 141.35456], "Nemuro Hanamaru COCONO SUSUKINO": [43.05524, 141.35464], "Daiichi Susukino supermarket": [43.05502, 141.35488], "Parfaiteria PaL Sapporo": [43.05495, 141.35636], "Majisand Sapporo": [43.05759, 141.35793], "Sapporo Factory": [43.06242, 141.3633], "United Cinemas Sapporo": [43.06241, 141.36346], "Yakiniku Dining Houteishiki Sapporo": [43.05202, 141.35497], "Susukino Sapporo": [43.05538, 141.35382], "Hokkaido University Sapporo": [43.07594, 141.34085], "Kita no Gourmet-tei Sapporo": [43.07064, 141.32315], "Hulic Square Sapporo": [43.06776, 141.35036], "Sapporo Stellar Place": [43.06858, 141.35078], "Onitsuka Tiger Sapporo Parco": [43.06063, 141.3549], "Arcteryx Sapporo Brand Store": [43.06046, 141.35311], "Last MINT Sapporo": [43.05854, 141.35687]};
-const qs=s=>document.querySelector(s), qe=s=>[...document.querySelectorAll(s)], esc=s=>encodeURIComponent(s), saved=JSON.parse(localStorage.getItem('sp26')||'{}');
-let currentDay='d12';
-let map, markerLayer, plannedLayer, doneLayer;
-
-function maps(q){ return 'https://www.google.com/maps/search/?api=1&query='+esc(q); }
-function route(q){ return 'https://www.google.com/maps/dir/?api=1&destination='+esc(q); }
-function googleDayRoute(day){
-  const pts = day.items.filter(x=>x[5] && COORDS[x[5]]).map(x=>x[5]);
-  if(!pts.length) return maps('Sapporo');
-  const origin = pts[0], destination = pts[pts.length-1], waypoints = pts.slice(1,-1);
-  let url = 'https://www.google.com/maps/dir/?api=1&origin='+esc(origin)+'&destination='+esc(destination);
-  if(waypoints.length) url += '&waypoints='+esc(waypoints.join('|'));
-  return url;
-}
-function pin(n, done){
-  return L.divIcon({className:'', html:`<div class="num-pin ${done?'done':''}">${n}</div>`, iconSize:[26,26], iconAnchor:[13,13], popupAnchor:[0,-14]});
-}
-function buildRoutePoints(dayId){
-  const day = D.find(d=>d.id===dayId);
-  const pts=[];
-  day.items.forEach((x,i)=>{
-    if(!x[5] || !COORDS[x[5]]) return;
-    pts.push({idx:i,id:`${day.id}-${i}`, name:x[2], meta:x[3], q:x[5], latlng:COORDS[x[5]], done:!!saved[`${day.id}-${i}`]});
-  });
-  return pts;
-}
-function initMap(){
-  map=L.map('routeMap',{zoomControl:true}).setView([43.060,141.355],13);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'© OpenStreetMap'}).addTo(map);
-  markerLayer=L.layerGroup().addTo(map);
-  plannedLayer=L.layerGroup().addTo(map);
-  doneLayer=L.layerGroup().addTo(map);
-}
-function updateMap(dayId){
-  currentDay=dayId;
-  const day=D.find(d=>d.id===dayId);
-  const pts=buildRoutePoints(dayId);
-  qs('#routeTitle').textContent=`${day.day}일 예상 동선`;
-  qs('#openDayRoute').onclick=()=>window.open(googleDayRoute(day),'_blank','noopener');
-  markerLayer.clearLayers(); plannedLayer.clearLayers(); doneLayer.clearLayers();
-  if(!pts.length) return;
-  const latlngs=pts.map(p=>p.latlng);
-  L.polyline(latlngs,{color:'#426d8b',weight:5,opacity:.85,dashArray:'8 12',lineCap:'round'}).addTo(plannedLayer);
-  for(let i=1;i<pts.length;i++){
-    if(pts[i].done) L.polyline([pts[i-1].latlng, pts[i].latlng], {color:'#2d8b68',weight:6,opacity:.96,lineCap:'round'}).addTo(doneLayer);
-  }
-  pts.forEach((p,n)=>{
-    const m=L.marker(p.latlng,{icon:pin(n+1,p.done)}).addTo(markerLayer);
-    m.bindPopup(`<b>${n+1}. ${p.name}</b><br>${p.meta}`);
-  });
-  const bounds=L.latLngBounds(latlngs);
-  map.fitBounds(bounds.pad(0.18));
-  const segDone = pts.slice(1).filter(p=>p.done).length;
-  qs('#routeMeta').innerHTML=`<b>예정</b> ${pts.length}개 장소`;
-  qs('#routeProgress').innerHTML=`<b>실제 이동</b> ${segDone} / ${Math.max(pts.length-1,0)}개 구간 완료`;
-}
-function progress(sec){ const a=qe('#'+sec.id+' .card'), n=a.filter(x=>x.classList.contains('done')).length; qs('#'+sec.id+' .prog i').style.width=(n/a.length*100)+'%'; }
-
-qs('#tabs').innerHTML = D.map(x=>`<button data-go="${x.id}"><b>${x.day}</b>${x.label}</button>`).join('');
-qs('#days').innerHTML = D.map(d=>`<section class="day" id="${d.id}"><div class="head"><div><small>SEP ${d.day} · 2026</small><h2>${d.title}</h2></div><em>${d.subtitle}</em></div><div class="prog"><i></i></div><div class="line">${d.items.map((x,i)=>`<div class="stop" data-id="${d.id}-${i}"><div class="tm">${x[0]}<small>${x[1]}</small></div><div class="card ${saved[d.id+'-'+i]?'done':''}"><div class="top"><button class="ck">✓</button><div class="txt"><h3>${x[2]}</h3><div class="meta">${x[3]}</div></div><span class="tag ${x[4]}">${x[4]}</span></div>${x[6]?`<div class="note">${x[6]}</div>`:''}${x[5]?`<div class="actions"><button class="act mapbtn" data-q="${String(x[5]).replace(/"/g,'&quot;')}">지도</button><button class="act primary dirbtn" data-q="${String(x[5]).replace(/"/g,'&quot;')}">길찾기</button></div>`:''}</div></div>${x[7]==='split'?`<div class="split"><div class="lane"><b>건스</b>유나이티드 시네마 삿포로에서 영화 관람.</div><div class="lane"><b>유미</b>삿포로 팩토리 구경 + 카페 작업. 영화 종료 시간에 합류.</div></div>`:''}`).join('')}</div></section>`).join('');
-
-qe('.day').forEach(progress);
-qe('.ck').forEach(b=>b.onclick=()=>{
-  let s=b.closest('.stop'), c=b.closest('.card'), id=s.dataset.id;
-  c.classList.toggle('done');
-  if(c.classList.contains('done')) saved[id]=true; else delete saved[id];
-  localStorage.setItem('sp26', JSON.stringify(saved));
-  progress(s.closest('.day'));
-  updateMap(s.closest('.day').id);
-});
-qe('[data-go]').forEach(b=>b.onclick=()=>{ qs('#'+b.dataset.go).scrollIntoView(); updateMap(b.dataset.go); });
-qe('.mapbtn').forEach(b=>b.onclick=()=>window.open(maps(b.dataset.q),'_blank','noopener'));
-qe('.dirbtn').forEach(b=>b.onclick=()=>window.open(route(b.dataset.q),'_blank','noopener'));
-qs('#fitRoute').onclick=()=>updateMap(currentDay);
-const io=new IntersectionObserver(es=>{
-  let h=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
-  if(h){
-    qe('[data-go]').forEach(b=>b.classList.toggle('on', b.dataset.go===h.target.id));
-    updateMap(h.target.id);
-  }
-},{rootMargin:'-20% 0px -65% 0px', threshold:[0.15,0.35,0.65]});
-qe('.day').forEach(s=>io.observe(s));
-initMap();
-updateMap(currentDay);
-</script>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
