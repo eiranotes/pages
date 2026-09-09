@@ -117,8 +117,8 @@ function initMap(){
   if(!window.maplibregl){$('#mapFallback').style.display='grid';return}
   map=new maplibregl.Map({container:'routeMap',style:'https://tiles.openfreemap.org/styles/positron',center:CITY_CENTER,zoom:12.7,minZoom:11.2,maxZoom:17,maxBounds:CITY_BOUNDS,dragRotate:false,pitchWithRotate:false,touchPitch:false,localIdeographFontFamily:'Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif',attributionControl:true});
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
-  map.on('load',()=>{applyKoreanLabels();addRouteLayers();mapReady=true;refreshRoute()});
-  map.on('error',e=>{if(!mapReady&&e?.error)$('#mapFallback').style.display='grid'});
+  const failTimer=setTimeout(()=>{if(!mapReady)$('#mapFallback').style.display='grid'},9000);
+  map.on('load',()=>{clearTimeout(failTimer);$('#mapFallback').style.display='none';applyKoreanLabels();addRouteLayers();mapReady=true;refreshRoute()});
 }
 function switchDay(id){
   activeDay=id;history.replaceState(null,'','#'+id.slice(1));renderTabs();renderSchedule();refreshRoute();window.scrollTo({top:0,behavior:'instant'});
