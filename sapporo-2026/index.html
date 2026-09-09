@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f7f9fb">
 <title>삿포로 9/12–15 일정</title>
 <meta name="description" content="2026년 9월 12–15일 삿포로 여행 일정과 실제 보행 경로 지도">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.8.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.7.0/maplibre-gl.min.css" onerror="this.onerror=null;this.href='https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css'">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
     <div class="map-legend" id="mapLegend" aria-label="경로 범례"></div>
     <div class="map-wrap">
       <div id="routeMap" role="application" aria-label="삿포로 실제 보행 경로 지도"></div>
-      <div class="map-status" id="mapStatus" aria-live="polite">경로 계산 중…</div>
+      <div class="map-status" id="mapStatus" aria-live="polite">지도 불러오는 중…</div>
     </div>
 
     <div class="route-order" id="routeOrder" aria-label="이동 순서"></div>
@@ -55,8 +55,37 @@
   </section>
 </div>
 
-<script src="https://unpkg.com/maplibre-gl@6.8.0/dist/maplibre-gl.js"></script>
 <script src="data.js"></script>
-<script src="app.js"></script>
+<script>
+(function(){
+  const sources=[
+    'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.7.0/maplibre-gl.min.js',
+    'https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js'
+  ];
+  let index=0,started=false;
+  function startApp(){
+    if(started)return;
+    started=true;
+    const app=document.createElement('script');
+    app.src='app.js';
+    app.onerror=function(){
+      const status=document.getElementById('mapStatus');
+      if(status){status.hidden=false;status.textContent='일정 스크립트를 불러오지 못했습니다. 새로고침해 주세요.';}
+    };
+    document.body.appendChild(app);
+  }
+  function loadNext(){
+    if(window.maplibregl){startApp();return;}
+    if(index>=sources.length){startApp();return;}
+    const script=document.createElement('script');
+    script.src=sources[index++];
+    script.async=true;
+    script.onload=function(){window.maplibregl?startApp():loadNext();};
+    script.onerror=loadNext;
+    document.body.appendChild(script);
+  }
+  loadNext();
+})();
+</script>
 </body>
 </html>
