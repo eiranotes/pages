@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f7f9fb">
 <title>삿포로 9/12–15 일정</title>
-<meta name="description" content="2026년 9월 12–15일 삿포로 여행 일정과 날짜별 Google Maps 실제 이동 경로">
+<meta name="description" content="2026년 9월 12–15일 삿포로 여행 일정과 실제 보행 경로 지도">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.8.0/dist/maplibre-gl.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,23 +26,27 @@
     <div class="day-sub" id="daySub"></div>
   </section>
 
-  <section class="map-section" aria-label="날짜별 Google Maps 이동 경로">
+  <section class="map-section" aria-label="날짜별 실제 이동 경로">
     <div class="map-tools">
       <div class="map-title-block">
-        <b>Google Maps · 실제 도로 경로</b>
+        <b>오늘 이동 경로</b>
         <span id="routeNote"></span>
       </div>
       <div class="map-actions">
-        <button id="resetMap">경로 다시 보기</button>
+        <button id="resetMap">전체 경로</button>
         <button id="airportRoute" hidden>공항 이동</button>
-        <button id="googleRoute" class="primary">Google Maps에서 열기</button>
+        <button id="googleRoute" class="primary">Google 길찾기</button>
       </div>
     </div>
-    <div class="route-variants" id="routeVariants" hidden aria-label="13일 분리 동선"></div>
+
+    <div class="map-legend" id="mapLegend" aria-label="경로 범례"></div>
     <div class="map-wrap">
-      <iframe id="routeMapFrame" title="Google Maps 날짜별 실제 이동 경로" loading="eager" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div id="routeMap" role="application" aria-label="삿포로 실제 보행 경로 지도"></div>
+      <div class="map-status" id="mapStatus" aria-live="polite">경로 계산 중…</div>
     </div>
-    <div class="map-note"><span>지도 언어: 한국어 · 도심 일정은 도보 경로 기준</span><span id="routeCount"></span></div>
+
+    <div class="route-order" id="routeOrder" aria-label="이동 순서"></div>
+    <div class="map-note"><span>메인 지도 · OpenStreetMap 기반 / 도보 경로</span><span id="routeCount"></span></div>
   </section>
 
   <section class="schedule">
@@ -50,6 +55,7 @@
   </section>
 </div>
 
+<script src="https://unpkg.com/maplibre-gl@6.8.0/dist/maplibre-gl.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>
