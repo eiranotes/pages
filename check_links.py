@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify that every relative asset referenced by the site exists.
 
-The site is served from a subpath (app.adeliedraw.com/adeliepages/), so every
+The site is served from a subpath (app.adeliedraw.com/pages/), so every
 local reference must stay relative. This gate fails on both missing files and
 absolute-rooted paths that would break under a subpath.
 """
@@ -15,7 +15,7 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent
 REFERENCE = re.compile(r'(?:src|href)="([^"]+)"')
 CSS_URL = re.compile(r'url\("?([^")]+)"?\)')
-SKIP_PREFIXES = ("http://", "https://", "//", "#", "mailto:", "data:")
+SKIP_PREFIXES = ("http://", "https://", "//", "#", "mailto:", "tel:", "data:")
 
 
 def check(path: Path, pattern: re.Pattern[str]) -> list[str]:
