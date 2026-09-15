@@ -102,3 +102,8 @@ h3{font-weight:400;letter-spacing:-.02em;margin:0;line-height:1.5;word-break:kee
  #sticker-viewer{width:calc(100% - 24px);max-height:calc(100dvh - 24px)}.viewer-header{padding:8px 14px}.viewer-header>span{font-size:11px}.viewer-art{padding:18px;height:min(52dvh,420px)}.viewer-footer{padding:14px 12px;gap:10px}.viewer-footer h2{font-size:17px}.viewer-footer .outline-button{padding:10px 12px}
 }
 @media(max-width:359px){.pack-grid{grid-template-columns:1fr}.pack-art{aspect-ratio:1.3}.pack-card-meta>span{display:inline}.pack-page .header{flex-wrap:wrap}.sticker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Keep the woodfree-paper fibers legible on high-density phone displays.
+   The source texture is subtle; rendering the same tile at the desktop
+   850px CSS width softens it too much on 2x/3x mobile screens. */
+@media(max-width:639px){body{background-image:url('assets/woodfree-white-mobile.webp');background-size:430px auto}}
