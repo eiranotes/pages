@@ -40,8 +40,7 @@ brand=json.loads((PUBLIC/'brand/MANIFEST.json').read_text())
 for name,digest in brand['files'].items():
     assert hashlib.sha256((PUBLIC/'brand'/name).read_bytes()).hexdigest()==digest,('Edited vendored brand file; sync from adelie-web-design',name)
 for path,page in pages.items():
-    # sapporo-2026 is a personal page slated for removal from the public tree.
-    assert path.name=='404.html' or 'sapporo-2026' in path.parts or 'aria-current="page">Apps</a>' in path.read_text(),('Brand bar missing',path)
+    assert path.name=='404.html' or 'aria-current="page">Apps</a>' in path.read_text(),('Brand bar missing',path)
 packs=json.loads((ROOT/'content/packs.json').read_text())
 assert len({p['slug'] for p in packs})==len(packs)
 for pack in packs:
