@@ -22,3 +22,4 @@ Refined heading spacing, shortened mobile app-gallery scrolling and switched LIN
 - Adopted the shared design from `adelie-web-design`: brand bar (binder index tabs, Apps current), shared footer with penguin cameo, shared 404, `--ad-*` tokens with legacy aliases.
 - Eyebrows are 12px / bold / indigo; hero and section headings use the shared type scale; page width follows the shared content width and gutter.
 - Legal pages: shared tokens, brand bar per locale block, no text below 12px except the lock-up subtitle; the AA-failing `--quiet` grey now maps to `--ad-ink-3`.
+- Hero playground: the flower, lemon and penguin stickers in the hero can be dragged (mouse/touch) or moved with arrow keys and stuck anywhere on the desk; "처음 자리로" restores the composition. Without JS the hero is unchanged.
