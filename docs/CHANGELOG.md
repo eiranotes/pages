@@ -16,3 +16,9 @@ page-making guidance and app captions; added four keyboard-accessible FAQ disclo
 Replaced the single-pack selector with a searchable, filterable collection grid. Added full
 25/39/35-item pack pages, sticker-name search, individual enlargement and previous/next controls.
 Refined heading spacing, shortened mobile app-gallery scrolling and switched LINE Seed to WOFF2.
+
+## 2026-10-07 · Shared Adelie web design
+
+- Adopted the shared design from `adelie-web-design`: brand bar (binder index tabs, Apps current), shared footer with penguin cameo, shared 404, `--ad-*` tokens with legacy aliases.
+- Eyebrows are 12px / bold / indigo; hero and section headings use the shared type scale; page width follows the shared content width and gutter.
+- Legal pages: shared tokens, brand bar per locale block, no text below 12px except the lock-up subtitle; the AA-failing `--quiet` grey now maps to `--ad-ink-3`.

@@ -1,0 +1,13 @@
+{
+  "source": "adelie-web-design",
+  "files": {
+    "adelie-web.css": "09927c9a4860d69e15ffe2661960d05c44ebc698bf72537f8da6b9ddeb70e4ff",
+    "adelie-web.js": "561972e8e7ad164d113177615eff6fa72aaa7af7a2fc947e67df693d44435a55",
+    "fonts/LINESeedKR-Bd.woff2": "86ee9c01a0f6c0c3978505beb7f49baf4b18be3f0f0a2480aceca55ffc647f06",
+    "fonts/LINESeedKR-Rg.woff2": "ba38640575bcec4999055912a921c827f4d38007e640e86b063a5b3a999ca476",
+    "fonts/OFL-LINESeedKR.txt": "e2f82b430cf7aa860b5733e793c2abbd3786eb142b275bf07e2d197588fa0e86",
+    "paper/woodfree-white-mobile.webp": "d688fe11b19e7433f745bb426022af2a8a9e73608620fc06dcd2cad4f28cec36",
+    "paper/woodfree-white.webp": "0709da2cce9a957d809c37270d84abe445330558b325a04f2695de3971df8a7b",
+    "resting-penguin.webp": "8b47ff6fda62a22b11d9fd918bb1b11ec85bebfd20d7471e2fb875bf414f732a"
+  }
+}

@@ -1,0 +1,238 @@
+/*
+ * Adelie Draw web design system — tokens, base and shared components.
+ * Canonical source: adelie-web-design/tokens/adelie-web.css
+ * Vendored into each site as brand/adelie-web.css by tools/sync.py.
+ * Do not edit a vendored copy; edit the canonical file and sync.
+ */
+
+@font-face{font-family:"LINESeedKR";src:url("fonts/LINESeedKR-Rg.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"LINESeedKR";src:url("fonts/LINESeedKR-Bd.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  color-scheme:light;
+
+  /* Surfaces: woodfree paper first, warm paper for authored artwork. */
+  --ad-paper:#F8F8F8;
+  --ad-paper-warm:#FAF5EC;
+  --ad-paper-sunken:#EFEFED;
+  --ad-paper-photo:#FFFDF6;
+
+  /* Ink: graphite carries structure. */
+  --ad-ink:#211C17;
+  --ad-ink-2:#665E55;
+  --ad-ink-3:#6F675E;
+  --ad-rule:#D8D8D5;
+  --ad-rule-strong:#BCBDBA;
+
+  /* One ink: indigo marks action, selection and focus only. */
+  --ad-indigo:#123F8D;
+  --ad-indigo-pressed:#0A3278;
+  --ad-indigo-soft:#E9ECF2;
+  --ad-on-indigo:#FFFFFF;
+  --ad-focus:#4E73B7;
+  --ad-scrim:rgba(17,24,39,.45);
+
+  /* Day and night windows from the stained-glass kiss-cut series. */
+  --ad-day-pane:#F1EBDF;
+  --ad-night:#111D3A;
+  --ad-night-ink:#EEF2F8;
+  --ad-night-ink-2:#A7B4CC;
+  --ad-night-rule:#33456B;
+
+  /* One foil: reserved for a single signature moment per screen. */
+  --ad-foil-gold:linear-gradient(115deg,#9A7A3A 0%,#E8D59A 36%,#B8944C 54%,#F3E6B8 70%,#9A7A3A 100%);
+  --ad-foil-silver:linear-gradient(115deg,#7A8594 0%,#E6EAF0 38%,#9AA5B4 56%,#F4F6F9 72%,#7A8594 100%);
+
+  /* Type: LINE Seed KR has only Regular and Bold. Never request 500/600. */
+  --ad-font:"LINESeedKR","Hiragino Sans","Yu Gothic","YuGothic","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
+  --ad-fs-display:clamp(36px,4.6vw,64px);
+  --ad-fs-h1:clamp(32px,3.6vw,48px);
+  --ad-fs-h2:clamp(26px,2.8vw,40px);
+  --ad-fs-h3:clamp(19px,1.6vw,22px);
+  --ad-fs-lead:clamp(15px,1.25vw,17px);
+  --ad-fs-body:16px;
+  --ad-fs-small:14px;
+  --ad-fs-caption:12px;
+  --ad-fs-eyebrow:12px;
+  --ad-lh-display:1.25;
+  --ad-lh-heading:1.35;
+  --ad-lh-body:1.8;
+  --ad-ls-display:-.035em;
+  --ad-ls-heading:-.03em;
+  --ad-ls-eyebrow:.1em;
+
+  /* Space: 4px base, matching the app's s2…s24 scale and extending it. */
+  --ad-s1:4px;--ad-s2:8px;--ad-s3:12px;--ad-s4:16px;--ad-s5:24px;
+  --ad-s6:32px;--ad-s7:48px;--ad-s8:64px;--ad-s9:96px;--ad-s10:128px;
+  --ad-section:clamp(56px,8vw,112px);
+
+  /* Layout */
+  --ad-content:1280px;
+  --ad-gutter:clamp(20px,4.5vw,80px);
+  --ad-narrow:720px;
+  --ad-measure:68ch;
+  --ad-bar-h:40px;
+  --ad-header-h:80px;
+
+  /* Shape and depth */
+  --ad-radius-control:2px;
+  --ad-radius-tab:8px;
+  --ad-radius-dialog:8px;
+  --ad-shadow-paper:1px 6px 12px rgba(33,28,23,.04),12px 24px 50px rgba(33,28,23,.05);
+  --ad-shadow-lift:2px 10px 18px rgba(33,28,23,.08),16px 32px 60px rgba(33,28,23,.08);
+  --ad-shadow-dialog:0 20px 60px rgba(33,28,23,.16);
+
+  /* Motion: things are placed on a desk, they do not fly. */
+  --ad-ease:cubic-bezier(.2,.7,.2,1);
+  --ad-dur-fast:160ms;
+  --ad-dur:280ms;
+  --ad-dur-slow:520ms;
+  --ad-tab-rise:4px;
+}
+
+@media (max-width:639px){
+  :root{--ad-header-h:64px}
+}
+
+/* ---------- Base ---------- */
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ad-paper) url("paper/woodfree-white.webp") repeat;
+  background-size:850px;
+  color:var(--ad-ink);
+  font-family:var(--ad-font);
+  -webkit-font-smoothing:antialiased;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+@media (max-width:639px){
+  body{background-image:url("paper/woodfree-white-mobile.webp");background-size:430px auto}
+}
+:where(a,button,summary,input,[tabindex]):focus-visible{outline:3px solid var(--ad-focus);outline-offset:4px}
+
+/* ---------- Utilities ---------- */
+
+.ad-wrap{width:100%;max-width:calc(var(--ad-content) + var(--ad-gutter) * 2);margin-inline:auto;padding-inline:var(--ad-gutter);box-sizing:border-box}
+.ad-eyebrow{margin:0 0 var(--ad-s5);color:var(--ad-indigo);font-size:var(--ad-fs-eyebrow);font-weight:700;letter-spacing:var(--ad-ls-eyebrow);line-height:1.5}
+.ad-visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Kiss-cut line: the die-cut outline appears around a card on hover. */
+.ad-cut{position:relative}
+.ad-cut::after{
+  content:"";position:absolute;inset:-7px;pointer-events:none;
+  border:1.5px dashed var(--ad-indigo);border-radius:calc(var(--ad-radius-tab) + 4px);
+  opacity:0;transform:scale(.985);
+  transition:opacity var(--ad-dur-fast) ease,transform var(--ad-dur) var(--ad-ease);
+}
+@media (hover:hover){.ad-cut:hover::after{opacity:.55;transform:none}}
+
+/* Settle: an element is laid on the desk as it enters. Only armed when JS runs. */
+.ad-js [data-ad-settle]{opacity:0;transform:translateY(12px) rotate(var(--ad-settle-turn,-1deg));transition:opacity var(--ad-dur-slow) ease,transform var(--ad-dur-slow) var(--ad-ease)}
+.ad-js [data-ad-settle].is-settled{opacity:1;transform:none}
+
+/* ---------- Brand bar: binder index tabs shared by every Adelie Draw site ---------- */
+
+.ad-brandbar{
+  position:relative;z-index:30;
+  background:var(--ad-paper-sunken);
+  border-bottom:1px solid var(--ad-rule);
+  font-family:var(--ad-font);
+}
+.ad-brandbar__inner{
+  display:flex;align-items:flex-end;gap:var(--ad-s1);
+  height:var(--ad-bar-h);
+  max-width:calc(var(--ad-content) + var(--ad-gutter) * 2);margin-inline:auto;padding-inline:var(--ad-gutter);box-sizing:border-box;
+}
+.ad-brandbar__list{display:flex;align-items:flex-end;gap:var(--ad-s1);margin:0;padding:0;list-style:none;min-width:0}
+.ad-brandbar__list li{display:flex}
+.ad-brandbar__tab{
+  position:relative;display:inline-flex;align-items:center;gap:var(--ad-s2);
+  height:32px;padding:0 var(--ad-s4);
+  border:1px solid transparent;border-bottom:0;border-radius:var(--ad-radius-tab) var(--ad-radius-tab) 0 0;
+  color:var(--ad-ink-2);font-size:13px;line-height:1;letter-spacing:.01em;text-decoration:none;white-space:nowrap;
+  transform:translateY(0);
+  transition:transform var(--ad-dur-fast) var(--ad-ease),color var(--ad-dur-fast) ease,background-color var(--ad-dur-fast) ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.ad-brandbar__tab:hover{color:var(--ad-ink);background:rgba(248,248,248,.6);transform:translateY(-2px)}
+.ad-brandbar__tab[aria-current="page"]{
+  height:calc(32px + var(--ad-tab-rise));margin-bottom:-1px;
+  background:var(--ad-paper) url("paper/woodfree-white.webp") repeat;background-size:850px;
+  border-color:var(--ad-rule);color:var(--ad-indigo);font-weight:700;transform:none;
+}
+.ad-brandbar__tab[aria-current="page"]::before{
+  content:"";position:absolute;left:var(--ad-s4);right:var(--ad-s4);top:6px;height:2px;border-radius:2px;background:var(--ad-indigo);
+}
+.ad-brandbar__home{font-weight:700;color:var(--ad-ink)}
+@media (max-width:639px){
+  .ad-brandbar__inner{gap:0;padding-inline:12px}
+  .ad-brandbar__list{gap:0}
+  .ad-brandbar__tab{padding:0 var(--ad-s3);font-size:12px}
+}
+@media (max-width:359px){
+  .ad-brandbar__tab{padding:0 10px}
+}
+
+/* ---------- Shared footer ---------- */
+
+.ad-footer{border-top:1px solid var(--ad-rule);color:var(--ad-ink-2);font-family:var(--ad-font);position:relative;overflow:hidden}
+.ad-footer__inner{
+  display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:var(--ad-s6);
+  padding-block:var(--ad-s8) var(--ad-s7);
+  max-width:calc(var(--ad-content) + var(--ad-gutter) * 2);margin-inline:auto;padding-inline:var(--ad-gutter);box-sizing:border-box;
+}
+.ad-footer__brand{display:flex;flex-direction:column;gap:var(--ad-s3);min-width:0}
+.ad-footer__mark{color:var(--ad-indigo);font-size:26px;font-weight:700;letter-spacing:-.03em;text-decoration:none;line-height:1.1}
+.ad-footer__brand p{margin:0;font-size:var(--ad-fs-small);line-height:1.7;max-width:22em}
+.ad-footer__col{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ad-footer__label{margin:0 0 var(--ad-s2);color:var(--ad-ink);font-size:var(--ad-fs-caption);font-weight:700;letter-spacing:var(--ad-ls-eyebrow)}
+.ad-footer__col a{display:inline-flex;align-items:center;min-height:36px;color:var(--ad-ink-2);font-size:var(--ad-fs-small);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color var(--ad-dur-fast) ease}
+.ad-footer__col a:hover{color:var(--ad-indigo);text-decoration-color:currentColor}
+.ad-footer__col a[aria-current="page"]{color:var(--ad-ink)}
+.ad-footer__base{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:var(--ad-s2) var(--ad-s5);
+  padding-block:var(--ad-s4) var(--ad-s6);border-top:1px dashed var(--ad-rule);
+  max-width:calc(var(--ad-content) + var(--ad-gutter) * 2);margin-inline:auto;padding-inline:var(--ad-gutter);box-sizing:border-box;
+  padding-right:calc(var(--ad-gutter) + 112px);
+  font-size:var(--ad-fs-caption);
+}
+.ad-footer__base a{color:inherit;text-underline-offset:3px}
+/* The penguin sits on the perforated line, in the space the base row leaves free. */
+.ad-footer__penguin{position:absolute;right:max(var(--ad-gutter),calc((100% - var(--ad-content)) / 2));bottom:22px;width:92px;height:auto;pointer-events:none;transform:rotate(-8deg)}
+@media (max-width:1023px){
+  .ad-footer__inner{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ad-footer__brand{grid-column:1/-1}
+}
+@media (max-width:639px){
+  .ad-footer__inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ad-s5);padding-block:var(--ad-s7) var(--ad-s6)}
+  .ad-footer__base{padding-right:calc(var(--ad-gutter) + 84px)}
+  .ad-footer__penguin{width:72px;bottom:20px}
+}
+
+/* ---------- Not found ---------- */
+
+.ad-notfound{min-height:calc(100vh - var(--ad-bar-h));display:grid;place-items:center;padding:var(--ad-s8) var(--ad-gutter);box-sizing:border-box;text-align:center}
+.ad-notfound__card{max-width:30em;display:flex;flex-direction:column;align-items:center}
+.ad-notfound__card img{width:min(220px,56vw);height:auto;transform:rotate(-6deg);margin-bottom:var(--ad-s5)}
+.ad-notfound h1{margin:0;font-size:var(--ad-fs-h1);font-weight:400;letter-spacing:var(--ad-ls-display);line-height:var(--ad-lh-heading)}
+.ad-notfound p:not(.ad-eyebrow){margin:var(--ad-s4) 0 0;color:var(--ad-ink-2);font-size:var(--ad-fs-small);line-height:var(--ad-lh-body)}
+.ad-notfound__links{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--ad-s2);margin-top:var(--ad-s6)}
+.ad-button{display:inline-flex;align-items:center;justify-content:center;gap:var(--ad-s3);min-height:48px;padding:0 var(--ad-s5);border-radius:var(--ad-radius-control);background:var(--ad-indigo);color:var(--ad-on-indigo);font-size:var(--ad-fs-small);text-decoration:none;transition:background-color var(--ad-dur-fast) ease,transform var(--ad-dur-fast) var(--ad-ease)}
+.ad-button:hover{background:var(--ad-indigo-pressed);transform:translateY(-2px)}
+.ad-button--quiet{background:transparent;color:var(--ad-indigo);border:1px solid var(--ad-rule)}
+.ad-button--quiet:hover{background:var(--ad-indigo-soft);border-color:var(--ad-indigo)}
+
+/* ---------- Reduced motion and print ---------- */
+
+@media (prefers-reduced-motion:reduce){
+  .ad-js [data-ad-settle]{opacity:1;transform:none;transition:none}
+  .ad-cut::after,.ad-brandbar__tab,.ad-footer__col a,.ad-button{transition:none}
+  .ad-brandbar__tab:hover,.ad-button:hover{transform:none}
+}
+@media print{
+  .ad-brandbar,.ad-footer__penguin{display:none}
+  body{background:#fff}
+  .ad-js [data-ad-settle]{opacity:1;transform:none}
+}

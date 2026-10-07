@@ -7,7 +7,10 @@ Run `python3 -m http.server 8876 --directory public`.
 Validate `python3 check_site.py` and `node --check public/app.js`.
 GitHub Actions publishes only `public/`. No package installation or build step.
 
-Design: white pressed paper, #123F8D indigo, LINE Seed Sans KR, 2px control radii.
+Design: shared Adelie web design (canonical repo `adelie-web-design`), vendored in `public/brand/`
+(tokens, LINE Seed, woodfree paper, brand bar, footer, 404). Never edit `public/brand/` here; edit the
+canonical and run its `tools/sync.py --write pages`. `check_site.py` rejects edited brand files.
+Site CSS keeps legacy variable names as aliases of `--ad-*`; new rules use `--ad-*` directly.
 Existing brand artwork supplies color; no generated art or simulated app screenshots.
 Pack links and sticker previews support mouse, touch, and native keyboard activation.
 Images are WebP derivatives. LINE Seed fonts include their full original OFL notice.

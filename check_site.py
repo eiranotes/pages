@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import re
 from urllib.parse import urlsplit, unquote
+import hashlib
 from build_site import catalog, detail
 ROOT=Path(__file__).parent
 PUBLIC=ROOT/'public'
@@ -27,13 +28,20 @@ for path,page in pages.items():
     for ref in page.refs:
         url=urlsplit(ref)
         if url.scheme or url.netloc:continue
-        target=(path.parent/unquote(url.path)).resolve() if url.path else path
+        if url.path.startswith('/pages/'):target=(PUBLIC/unquote(url.path[len('/pages/'):])).resolve()
+        else:target=(path.parent/unquote(url.path)).resolve() if url.path else path
         assert target.is_relative_to(PUBLIC.resolve()),ref
         if target.is_dir(): target=(target/'index.html').resolve()
         assert target.is_file(),(path,ref)
         if url.fragment and target in pages:assert unquote(url.fragment) in pages[target].ids,(path,ref)
-for path in PUBLIC.glob('*.css'):
+for path in [*PUBLIC.glob('*.css'),*(PUBLIC/'brand').glob('*.css')]:
     for ref in re.findall(r"url\(['\"]?([^)'\"]+)",path.read_text()):assert (path.parent/ref).is_file(),ref
+brand=json.loads((PUBLIC/'brand/MANIFEST.json').read_text())
+for name,digest in brand['files'].items():
+    assert hashlib.sha256((PUBLIC/'brand'/name).read_bytes()).hexdigest()==digest,('Edited vendored brand file; sync from adelie-web-design',name)
+for path,page in pages.items():
+    # sapporo-2026 is a personal page slated for removal from the public tree.
+    assert path.name=='404.html' or 'sapporo-2026' in path.parts or 'aria-current="page">Apps</a>' in path.read_text(),('Brand bar missing',path)
 packs=json.loads((ROOT/'content/packs.json').read_text())
 assert len({p['slug'] for p in packs})==len(packs)
 for pack in packs:
@@ -43,4 +51,4 @@ for pack in packs:
 main=(PUBLIC/'index.html').read_text()
 assert main.split('<!-- CATALOG START -->\n')[1].split('\n<!-- CATALOG END -->')[0]==catalog(packs),'Rebuild stale main catalogue'
 assert {p.name for p in (PUBLIC/'packs').glob('*.html')}=={f"{p['slug']}.html" for p in packs},'Unlisted detail page'
-print(f'PASS: {len(pages)} pages, {len(packs)} packs, {sum(len(p["stickers"]) for p in packs)} stickers; links, images, fonts, anchors and generated content')
+print(f'PASS: {len(pages)} pages, {len(packs)} packs, {sum(len(p["stickers"]) for p in packs)} stickers; links, images, fonts, anchors, brand copy and generated content')
