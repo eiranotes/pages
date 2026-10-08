@@ -5,7 +5,7 @@ import json
 import re
 from urllib.parse import urlsplit, unquote
 import hashlib
-from build_site import catalog, detail
+from build_site import catalog, detail, load_covers
 ROOT=Path(__file__).parent
 PUBLIC=ROOT/'public'
 class Page(HTMLParser):
@@ -48,6 +48,6 @@ for pack in packs:
     for sticker in pack['stickers']:
         for key in ('thumb','image'):assert (PUBLIC/sticker[key]).is_file(),sticker[key]
 main=(PUBLIC/'index.html').read_text()
-assert main.split('<!-- CATALOG START -->\n')[1].split('\n<!-- CATALOG END -->')[0]==catalog(packs),'Rebuild stale main catalogue'
+assert main.split('<!-- CATALOG START -->\n')[1].split('\n<!-- CATALOG END -->')[0]==catalog(packs,load_covers()),'Rebuild stale main catalogue'
 assert {p.name for p in (PUBLIC/'packs').glob('*.html')}=={f"{p['slug']}.html" for p in packs},'Unlisted detail page'
 print(f'PASS: {len(pages)} pages, {len(packs)} packs, {sum(len(p["stickers"]) for p in packs)} stickers; links, images, fonts, anchors, brand copy and generated content')

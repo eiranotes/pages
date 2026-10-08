@@ -4,52 +4,29 @@
 const normalize = value => value.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
 document.querySelectorAll('[data-enhanced]').forEach(element => { element.hidden = false; });
 
-const packGrid = document.getElementById('pack-grid');
-if (packGrid) {
-  const cards = Array.from(packGrid.querySelectorAll('.pack-card'));
-  const search = document.getElementById('pack-search');
-  const filters = Array.from(document.querySelectorAll('[data-category]'));
-  const more = document.getElementById('pack-more');
-  const result = document.getElementById('pack-result');
-  const empty = document.getElementById('pack-empty');
-  let category = '';
-  let limit = 6;
-
-  function render() {
-    const terms = normalize(search.value).split(' ').filter(Boolean);
-    const matches = cards.filter(card => {
-      const text = normalize(card.dataset.search);
-      return (!category || card.dataset.tags.split('|').includes(category)) && terms.every(term => text.includes(term));
-    });
-    cards.forEach(card => { card.hidden = true; });
-    matches.slice(0, limit).forEach(card => { card.hidden = false; });
-    result.textContent = `${matches.length}개의 스티커팩${matches.length > limit ? ` · ${limit}개 표시` : ''}`;
-    empty.hidden = matches.length !== 0;
-    more.hidden = matches.length <= limit;
-    more.textContent = `팩 더 보기 (${Math.min(6, Math.max(0, matches.length - limit))}개)`;
-    filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
+// Pack covers drift in two rows. Motion is decoration: it pauses off screen, on hover/focus,
+// on request, and is replaced by a static scroller under prefers-reduced-motion (CSS).
+const packFlow = document.getElementById('pack-flow');
+if (packFlow) {
+  document.documentElement.classList.add('js');
+  const toggle = document.getElementById('flow-toggle');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const syncToggle = () => { toggle.hidden = reduce.matches; };
+  syncToggle();
+  reduce.addEventListener('change', syncToggle);
+  toggle.addEventListener('click', () => {
+    const paused = packFlow.classList.toggle('is-paused');
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.textContent = paused ? '다시 흐르게' : '흐름 멈추기';
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) packFlow.classList.add('is-visible');
+      packFlow.classList.toggle('is-offscreen', !entry.isIntersecting);
+    }), { rootMargin: '0px 0px -12% 0px' }).observe(packFlow);
+  } else {
+    packFlow.classList.add('is-visible');
   }
-  search.addEventListener('input', () => { limit = 6; render(); });
-  filters.forEach(button => button.addEventListener('click', () => {
-    category = button.dataset.category;
-    limit = 6;
-    render();
-  }));
-  more.addEventListener('click', () => {
-    const previouslyVisible = cards.filter(card => !card.hidden);
-    limit += 6;
-    render();
-    const firstNew = cards.find(card => !card.hidden && !previouslyVisible.includes(card));
-    firstNew?.querySelector('a').focus();
-  });
-  document.getElementById('pack-reset').addEventListener('click', () => {
-    search.value = '';
-    category = '';
-    limit = 6;
-    render();
-    search.focus();
-  });
-  render();
 }
 
 const stickerSearch = document.getElementById('sticker-search');

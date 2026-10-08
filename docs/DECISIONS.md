@@ -20,3 +20,18 @@ Use a static page per pack, so expansion, shareable URLs and browser back work w
 Only content/packs.json explicitly publishes a pack. Never scan source production into the site.
 Present actual member stickers instead of draft covers that may not match current artwork.
 Source-only packs, app runtime registration and store/rights status remain outside this change.
+
+## Drifting pack covers · 2026-10-08
+
+User asked to stop listing every pack and to let the app's pack covers flow like the onboarding
+motion. The cover set is the app catalogue (`assets/catalogs/pack_catalog.json`) at a committed
+ref, read with `git show` by `tool/sync_pack_covers.py` (default `main`; never a working tree,
+whose branch other sessions may move). Packs with publication status `withdrawn` are skipped;
+order follows the catalogue's sortOrder. First sync: app main 895ccb61, 33 packs, 32 shown.
+`content/pack_covers.json` records each source path and SHA-256.
+Covers are 480×600 WebP derivatives of the bundled originals; the v2 foil mask is reused for a
+CSS foil sweep. The section is pure CSS animation (no library); each row repeats its covers twice
+and moves by one copy for a seamless loop. Only the first copy is in the accessibility tree.
+A pause control satisfies moving-content guidance (WCAG 2.2.2).
+Publishing covers does not change pack approvals, rights status or store availability; most
+packs are still `internalReview` in the app catalogue.

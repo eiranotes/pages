@@ -4,26 +4,28 @@ from html import escape as e
 from pathlib import Path
 ROOT=Path(__file__).parent
 
-def card(pack):
-    images=''.join(f'<img src="{e(s["thumb"])}" width="240" height="240" alt="" loading="lazy">' for s in pack['stickers'][:3])
-    search=' '.join([pack['name'],pack['english'],*pack['tags'],*(s['name'] for s in pack['stickers'])])
-    return f'''<article class="pack-card" data-tags="{e('|'.join(pack['tags']))}" data-search="{e(search)}">
-<a class="pack-link" href="packs/{e(pack['slug'])}.html"><div class="pack-art">{images}</div>
-<div class="pack-title-row"><h3>{e(pack['name'])}</h3><span aria-hidden="true">↗</span></div>
-<p class="pack-card-meta">스티커 {len(pack['stickers'])}개 <span>· {' / '.join(map(e,pack['tags'][:2]))}</span></p>
-<p class="pack-card-action">전체 스티커 보기</p></a></article>'''
+COPIES=2  # one row = the list twice; CSS moves it by exactly one copy for a seamless loop (one copy is wider than any screen)
 
-def catalog(packs):
-    tags=list(dict.fromkeys(tag for p in packs for tag in p['tags']))
-    filters='<button type="button" data-category="" aria-pressed="true">전체</button>'+''.join(f'<button type="button" data-category="{e(t)}" aria-pressed="false">{e(t)}</button>' for t in tags)
-    return f'''<section class="collection wrap" id="collection" aria-labelledby="collection-title">
-<div class="section-top"><div><p class="eyebrow">The sticker collection</p><h2 id="collection-title">좋아하는 그림을,<br>한 팩씩 만나보세요.</h2></div><p>팩을 열면 안에 담긴 스티커를 모두 볼 수 있어요.<br>마음에 드는 그림은 눌러서 더 가까이 살펴보세요.</p></div>
-<div class="catalog-tools" data-enhanced hidden><div class="category-filters" role="group" aria-label="스티커팩 주제">{filters}</div><label class="catalog-search"><span>팩·스티커 찾기</span><input type="search" id="pack-search" placeholder="펭귄, 레몬, 고양이…" autocomplete="off"></label></div>
-<div class="catalog-result"><p id="pack-result" role="status">{len(packs)}개의 스티커팩</p><span>아델리드로우의 디지털 문구</span></div>
-<div class="pack-grid" id="pack-grid">{''.join(card(p) for p in packs)}</div>
-<div class="catalog-empty" id="pack-empty" hidden><h3>찾는 그림이 아직 보이지 않네요.</h3><p>다른 단어로 찾아보거나 전체 팩을 둘러보세요.</p><button type="button" id="pack-reset" class="outline-button">전체 팩 보기</button></div>
-<div class="catalog-more"><button type="button" id="pack-more" class="outline-button" hidden>팩 더 보기</button></div>
-<p class="catalog-footnote">현재 소개 중인 스티커팩이에요. 새로운 컬렉션도 차근차근 선보일게요.</p>
+def cover(c,copy):
+    # Only the first copy is announced; the repeats exist for the loop and stay out of the a11y tree.
+    alt=f"{c['name']} 표지" if copy==0 else ''
+    foil=f'<span class="cover-foil" style="--foil:url({e(c["foil"])})"></span>' if c.get('foil') else ''
+    return f'''<li class="flow-cover"{' aria-hidden="true"' if copy else ''}><img src="{e(c['cover'])}" width="480" height="600" alt="{e(alt)}" decoding="async">{foil}</li>'''
+
+def flow_row(covers,direction):
+    return f'''<ul class="flow-row" data-direction="{direction}" style="--count:{len(covers)}">{''.join(cover(c,k) for k in range(COPIES) for c in covers)}</ul>'''
+
+def catalog(packs,covers):
+    half=(len(covers)+1)//2
+    details=' '.join(f'<a href="packs/{e(p["slug"])}.html">{e(p["name"])}</a>' for p in packs)
+    return f'''<section class="collection" id="collection" aria-labelledby="collection-title">
+<div class="section-top wrap"><div><p class="eyebrow">The sticker collection</p><h2 id="collection-title">좋아하는 그림을,<br>한 팩씩 만나보세요.</h2></div><p>앱 안에는 지금 {len(covers)}개의 팩이 준비되어 있어요.<br>천천히 흘러가는 표지 사이에서 마음에 드는 그림을 찾아보세요.</p></div>
+<div class="pack-flow" id="pack-flow" role="group" aria-label="Adelie Pages 팩 표지 {len(covers)}개">
+{flow_row(covers[:half],'left')}
+{flow_row(covers[half:],'right')}
+</div>
+<div class="flow-foot wrap"><p class="flow-details"><span>스티커를 한 장씩 보기</span> {details}</p><button type="button" class="flow-toggle" id="flow-toggle" aria-pressed="false" data-enhanced hidden>흐름 멈추기</button></div>
+<p class="catalog-footnote wrap">개발 중인 앱에 담긴 팩 표지예요. 출시 때 구성은 달라질 수 있어요.</p>
 </section>'''
 
 def detail(p):
@@ -42,8 +44,17 @@ def detail(p):
 <dialog id="sticker-viewer" aria-labelledby="viewer-name"><div class="viewer-header"><span>Adelie Draw · {e(p['name'])}</span><button class="viewer-close" type="button" aria-label="스티커 확대 닫기" autofocus>닫기 ×</button></div><div class="viewer-art"><img id="viewer-image" alt=""><p id="viewer-error" hidden>이미지를 불러오지 못했어요. 닫은 뒤 다시 열어주세요.</p></div><div class="viewer-footer"><button id="viewer-prev" class="outline-button" type="button" aria-label="이전 스티커">←</button><div aria-live="polite"><h2 id="viewer-name"></h2><p id="viewer-position"></p></div><button id="viewer-next" class="outline-button" type="button" aria-label="다음 스티커">→</button></div></dialog>
 <footer class="ad-footer"><div class="ad-footer__inner"><div class="ad-footer__brand"><a class="ad-footer__mark" href="https://adeliedraw.com/">Adelie Draw</a><p>그림에서 시작해, 일상에서 쓰이는 문구로.</p></div><nav class="ad-footer__col" aria-label="Adelie Draw"><p class="ad-footer__label">ADELIE DRAW</p><a href="https://adeliedraw.com/">Home</a><a href="https://info.adeliedraw.com/">Info</a><a href="https://shop.adeliedraw.com/">Shop</a><a href="https://app.adeliedraw.com/">Apps</a></nav><nav class="ad-footer__col" aria-label="Adelie Pages"><p class="ad-footer__label">ADELIE PAGES</p><a href="../index.html#collection">스티커 구경하기</a><a href="../privacy/">개인정보처리방침</a><a href="../terms/">이용약관</a><a href="../support/">지원</a><a href="../data/">데이터 관리</a><a href="../info/">앱 정보</a></nav><div class="ad-footer__col"><p class="ad-footer__label">CONTACT</p><a href="https://www.instagram.com/adelie.draw/" rel="noopener">Instagram</a><a href="https://x.com/canvaswitch_" rel="noopener">X</a><a href="mailto:adeliedraw@gmail.com">adeliedraw@gmail.com</a></div></div><div class="ad-footer__base"><small>© 2026 Adelie Draw. All rights reserved.</small><small>그림은 아델리드로우. 페이지는 당신의 취향으로.</small><small><a href="../brand/fonts/OFL-LINESeedKR.txt">LINE Seed Sans KR · OFL</a></small></div><img class="ad-footer__penguin" src="../brand/resting-penguin.webp" width="240" height="240" alt="" loading="lazy" decoding="async"></footer></body></html>'''
 
+def load_covers():
+    covers=json.loads((ROOT/'content/pack_covers.json').read_text())['covers']
+    assert covers and len({c['id'] for c in covers})==len(covers)
+    for c in covers:
+        for field in ('cover','foil'):
+            if field in c:assert (ROOT/'public'/c[field]).is_file(),c[field]
+    return covers
+
 def build():
     packs=json.loads((ROOT/'content/packs.json').read_text())
+    covers=load_covers()
     assert len({p['slug'] for p in packs})==len(packs)
     for p in packs:
         assert p['stickers'] and p['slug'].replace('-','').isalnum()
@@ -53,6 +64,6 @@ def build():
         (ROOT/'public/packs'/f"{p['slug']}.html").write_text(detail(p))
     path=ROOT/'public/index.html';s=path.read_text();start='<!-- CATALOG START -->';end='<!-- CATALOG END -->'
     assert start in s and end in s
-    path.write_text(s.split(start)[0]+start+'\n'+catalog(packs)+'\n'+end+s.split(end)[1])
-    print(f"Built {len(packs)} packs / {sum(len(p['stickers']) for p in packs)} sticker entries")
+    path.write_text(s.split(start)[0]+start+'\n'+catalog(packs,covers)+'\n'+end+s.split(end)[1])
+    print(f"Built {len(packs)} packs / {sum(len(p['stickers']) for p in packs)} sticker entries / {len(covers)} flowing covers")
 if __name__=='__main__':build()

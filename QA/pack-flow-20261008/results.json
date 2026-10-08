@@ -1,0 +1,72 @@
+[
+  {
+    "width": 1440,
+    "overflow": 0,
+    "moving": [
+      -105.9,
+      105.9
+    ],
+    "flowTop": 299,
+    "offscreen": false,
+    "visible": true,
+    "covers": 32,
+    "announced": 32,
+    "broken": 0,
+    "coverWidth": 214
+  },
+  {
+    "width": 1002,
+    "overflow": 0,
+    "moving": [
+      -28.7,
+      28.7
+    ],
+    "flowTop": 266,
+    "offscreen": false,
+    "visible": true,
+    "covers": 32,
+    "announced": 32,
+    "broken": 0,
+    "coverWidth": 154
+  },
+  {
+    "width": 390,
+    "overflow": 0,
+    "moving": [
+      -24.7,
+      24.7
+    ],
+    "flowTop": 283,
+    "offscreen": false,
+    "visible": true,
+    "covers": 32,
+    "announced": 32,
+    "broken": 0,
+    "coverWidth": 135
+  },
+  {
+    "pause": {
+      "runningAtStart": true,
+      "pausedByToggle": true,
+      "label": "다시 흐르게",
+      "pressed": "true",
+      "resumed": true,
+      "labelAfter": "흐름 멈추기",
+      "toggleHidden": false,
+      "pausedByHover": true,
+      "resumedAfterHover": true
+    }
+  },
+  {
+    "reduced": {
+      "still": true,
+      "shownCovers": 32,
+      "scrollable": true,
+      "toggleHidden": true,
+      "overflow": 0
+    }
+  },
+  {
+    "problems": []
+  }
+]

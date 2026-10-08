@@ -31,13 +31,18 @@ names, membership and source hashes in `QA/catalog-provenance.json`. Do not put 
 source-only packs or private approval records in `public/`. Adding a web pack does not
 change app integration, store products or rights status.
 
-The collection is a 3/2/1-column grid with search, topic filtering and six-at-a-time
-expansion. Each pack gets a standalone URL. Sticker links work without JS; JS opens
-an accessible native dialog with previous/next, Escape, and focus return.
+The main collection does not list packs. It shows the app's pack covers drifting in two
+opposite rows, like the onboarding's closing scene. `content/pack_covers.json` holds the
+covers (order, names, 480×600 WebP derivatives and app source SHA-256). When the app catalogue
+changes, run `python3 tool/sync_pack_covers.py` (reads the app's committed `main` via git and skips
+withdrawn packs), then rebuild. Motion
+pauses on hover/focus, off screen and with the on-page toggle; `prefers-reduced-motion` gets a
+still, scrollable row. Each `content/packs.json` pack keeps its standalone sticker page, linked
+in one line under the covers. Sticker links work without JS; JS opens an accessible native
+dialog with previous/next, Escape, and focus return.
 
-To reproduce the 18-pack scale check, run `python3 tool/build_qa_fixture.py`, serve the
-repository root locally and open `QA/catalog-scale.html`. The fixture is never deployed:
-GitHub Actions only uploads `public/`.
+Run `node tool/flow_qa.mjs QA/<folder>` for the cover-flow check (widths, motion, pause,
+reduced motion, console errors and a review frame sequence). GitHub Actions only uploads `public/`.
 
 The LINE Seed WOFF2 files reuse the Korean-inclusive subsets published by eiranotes/pages.
 Their source URLs and hashes are in ASSET_SOURCES.json; the original OFL stays bundled.
