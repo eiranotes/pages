@@ -1,11 +1,11 @@
-"""Validate every static page, its anchors, and the explicit published catalogue."""
+"""Validate every static page, its anchors, brand files and the generated cover flow."""
 from html.parser import HTMLParser
 from pathlib import Path
 import json
 import re
 from urllib.parse import urlsplit, unquote
 import hashlib
-from build_site import catalog, detail, load_covers
+from build_site import catalog, load_covers
 ROOT=Path(__file__).parent
 PUBLIC=ROOT/'public'
 class Page(HTMLParser):
@@ -41,13 +41,7 @@ for name,digest in brand['files'].items():
     assert hashlib.sha256((PUBLIC/'brand'/name).read_bytes()).hexdigest()==digest,('Edited vendored brand file; sync from adelie-web-design',name)
 for path,page in pages.items():
     assert path.name=='404.html' or 'aria-current="page">Apps</a>' in path.read_text(),('Brand bar missing',path)
-packs=json.loads((ROOT/'content/packs.json').read_text())
-assert len({p['slug'] for p in packs})==len(packs)
-for pack in packs:
-    assert (PUBLIC/'packs'/f"{pack['slug']}.html").read_text()==detail(pack), 'Rebuild stale detail page'
-    for sticker in pack['stickers']:
-        for key in ('thumb','image'):assert (PUBLIC/sticker[key]).is_file(),sticker[key]
 main=(PUBLIC/'index.html').read_text()
-assert main.split('<!-- CATALOG START -->\n')[1].split('\n<!-- CATALOG END -->')[0]==catalog(packs,load_covers()),'Rebuild stale main catalogue'
-assert {p.name for p in (PUBLIC/'packs').glob('*.html')}=={f"{p['slug']}.html" for p in packs},'Unlisted detail page'
-print(f'PASS: {len(pages)} pages, {len(packs)} packs, {sum(len(p["stickers"]) for p in packs)} stickers; links, images, fonts, anchors, brand copy and generated content')
+assert main.split('<!-- CATALOG START -->\n')[1].split('\n<!-- CATALOG END -->')[0]==catalog(load_covers()),'Rebuild stale main catalogue'
+assert not (PUBLIC/'packs').exists() and not (PUBLIC/'assets/catalog').exists(),'Per-sticker pages are withdrawn'
+print(f'PASS: {len(pages)} pages; links, images, fonts, anchors, brand copy and generated cover flow')

@@ -1,7 +1,7 @@
 # Status · 2026-09-08
 
 Independent stationery-led introduction implemented. Original app and site untouched.
-Hero, searchable pack catalogue, separate detail pages, page example, app captures and brand story.
+Hero, drifting pack covers, page example, 30-second reel, current app captures and brand story. No individual sticker pages (removed 2026-10-25).
 Static site; no third-party runtime dependencies, tracking, account forms, or fake download CTA.
 Deployment: separate eiranotes/pages-showcase repository, public/ artifact only.
 Verification and deployment evidence are recorded in QA/VERIFICATION.md.
