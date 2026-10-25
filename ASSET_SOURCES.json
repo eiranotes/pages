@@ -35,19 +35,19 @@
     "source_sha256": "4f536bbdc562f11097eb53d21950d18e6923b2327e9f9d4865a4ee1db84b6a87"
   },
   {
-    "file": "compose.webp",
-    "source": "Adelie Pages/site/sol/assets/img/screens/compose.png",
-    "source_sha256": "b4010fb73dd15ec43b7d4ed00bdd878003a095dd257efd0c0f247b4e45aaff95"
+    "file": "app-editor.webp",
+    "source": "Adelie Pages Work/media-production/adelie-pages-reel-v6/reel/assets/app/g_done.png",
+    "source_sha256": "7506a484b57c6d7491339c69c5b713a249a31784c4a48e4afe8e5d2b85912bd4"
   },
   {
-    "file": "home.webp",
-    "source": "Adelie Pages/site/sol/assets/img/screens/home.png",
-    "source_sha256": "db89d7c17914369d6a762bfae3cca542bcd6136f6fd5559175a1a3e694ac530f"
+    "file": "app-home.webp",
+    "source": "Adelie Pages Work/media-production/_legacy/adelie-pages-reel-v6-work/reel-assets-app-unused/home.png",
+    "source_sha256": "2ae9ab13559fa3ac531e20f3b986c4e11c3b9d7725ef66fc549a24cd5746068a"
   },
   {
-    "file": "pages.webp",
-    "source": "Adelie Pages/site/sol/assets/img/screens/pages.png",
-    "source_sha256": "f3d4ffe678eef8c0c1ca740b0bc1d1a0ad062885ade0371fb532ebb071c806c2"
+    "file": "app-pages.webp",
+    "source": "Adelie Pages Work/media-production/_legacy/adelie-pages-reel-v6-work/reel-assets-app-unused/pages.png",
+    "source_sha256": "a6e3b57d207c68765a4214b7a38f235219f5a1d170c3ceeaf5f9bfe066e2ae64"
   },
   {
     "file": "lemon-page.webp",
@@ -77,5 +77,10 @@
     "sha256": "86ee9c01a0f6c0c3978505beb7f49baf4b18be3f0f0a2480aceca55ffc647f06",
     "license": "OFL-LINESeedKR.txt",
     "coverage": "Korean full Unicode ranges per eiranotes/pages README"
+  },
+  {
+    "file": "media/reel-v6.mp4",
+    "source": "Adelie Pages Work/media-production/adelie-pages-reel-v6/out/adelie_pages_reel_v6.mp4",
+    "source_sha256": "a4b40d26e9210491e1de652d8ce2d1dc43d58e473a89c5745b6d2e400d00a8ad"
   }
 ]

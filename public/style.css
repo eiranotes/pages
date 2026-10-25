@@ -123,3 +123,8 @@ h3{font-weight:400;letter-spacing:-.02em;margin:0;line-height:1.5;word-break:kee
 @media(max-width:639px){.pack-flow{--w:132px;--gap:14px;padding-block:12px 8px}.flow-foot{display:block;margin-top:22px}.flow-details{font-size:12px}.flow-toggle{margin-top:6px;font-size:12px}}
 /* No drift when the reader asks for less motion: one copy, scrollable by hand. */
 @media(prefers-reduced-motion:reduce){.pack-flow{overflow-x:auto;scroll-snap-type:x proximity;-webkit-mask-image:none;mask-image:none;padding-inline:20px}.flow-row{animation:none}.flow-row[data-direction=right]{margin-left:0}.flow-cover[aria-hidden]{display:none}.flow-cover{scroll-snap-align:start}.js .flow-row{opacity:1!important;translate:none!important}}
+/* 30-second reel: copy beside a portrait video; stacked on phones. */
+.reel{border-top:1px solid var(--rule);padding-block:90px;display:grid;grid-template-columns:1fr minmax(0,360px);gap:90px;align-items:center}.reel-copy h2 span{color:var(--indigo)}.reel-copy>p:not(.eyebrow){font-size:15px;color:var(--secondary);margin-top:26px}.reel-copy .reel-note{font-size:11px;margin-top:20px}.reel-video{justify-self:center;width:100%;transform:rotate(2deg)}.reel-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--authored);border:1px solid var(--rule);box-shadow:8px 15px 40px #211c1712}
+@media(max-width:1023px){.reel{gap:50px}}
+@media(max-width:639px){.reel{grid-template-columns:1fr;padding-block:48px;gap:32px}.reel-copy>p:not(.eyebrow){font-size:14px}.reel-video{max-width:300px}}
+@media(prefers-reduced-motion:reduce){.reel-video{transform:none}}
