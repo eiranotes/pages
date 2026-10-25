@@ -19,8 +19,8 @@ def catalog(packs,covers):
     half=(len(covers)+1)//2
     details=' '.join(f'<a href="packs/{e(p["slug"])}.html">{e(p["name"])}</a>' for p in packs)
     return f'''<section class="collection" id="collection" aria-labelledby="collection-title">
-<div class="section-top wrap"><div><p class="eyebrow">The sticker collection</p><h2 id="collection-title">좋아하는 그림을,<br>한 팩씩 만나보세요.</h2></div><p>앱 안에는 지금 {len(covers)}개의 팩이 준비되어 있어요.<br>천천히 흘러가는 표지 사이에서 마음에 드는 그림을 찾아보세요.</p></div>
-<div class="pack-flow" id="pack-flow" role="group" aria-label="Adelie Pages 팩 표지 {len(covers)}개">
+<div class="section-top wrap"><div><p class="eyebrow">The sticker collection</p><h2 id="collection-title">좋아하는 그림을,<br>한 팩씩 만나보세요.</h2></div><p>앱 안에는 다양한 스티커팩이 준비되어 있어요.<br>천천히 흘러가는 표지 사이에서 마음에 드는 그림을 찾아보세요.</p></div>
+<div class="pack-flow" id="pack-flow" role="group" aria-label="Adelie Pages 팩 표지">
 {flow_row(covers[:half],'left')}
 {flow_row(covers[half:],'right')}
 </div>
