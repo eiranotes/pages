@@ -14,7 +14,10 @@ Site CSS keeps legacy variable names as aliases of `--ad-*`; new rules use `--ad
 Existing brand artwork supplies color; no generated art or simulated app screenshots.
 Images are WebP derivatives. LINE Seed fonts include their full original OFL notice.
 
-This is an app introduction, not an app release. Store links are not available.
+App Store links (`a[data-app-store]`) default to https://apps.apple.com/kr/app/adelie-pages/id6822323315.
+`public/app.js` swaps `kr` for the visitor's storefront from the first browser language with a region
+(`Intl.Locale.maximize()`, so `ja` → `jp`, `zh-Hant` → `tw`); Apple sends unknown storefronts to `us`.
+The app section shows the App Store screenshots (`public/assets/store/`, sources in ASSET_SOURCES.json).
 See docs for scope and checks. Artwork remains owned by Adelie Draw; no reuse license is granted.
 
 ## Pack covers

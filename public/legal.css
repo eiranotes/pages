@@ -108,3 +108,4 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 
 @media(max-width:400px){.legal-hub h1{font-size:41px}.legal-index ol{display:block}.legal-index li:nth-child(odd),.legal-index li:nth-child(even){border-right:0;padding-inline:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.legal-section p a{color:var(--indigo);border-bottom:1px solid currentColor}

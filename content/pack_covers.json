@@ -1,11 +1,35 @@
 {
   "note": "Pack covers mirrored from the Adelie Pages app catalogue (assets/catalogs/pack_catalog.json) by tool/sync_pack_covers.py. Withdrawn packs are skipped.",
   "appRef": "main",
-  "appCommit": "895ccb61",
+  "appCommit": "379638c8",
   "skippedWithdrawn": [
+    "adelie_202610_hunting_tape_v1",
+    "adelie_202610_dawn_tape_v1",
     "adelie_202610_gift_melon_parfait_v001"
   ],
   "covers": [
+    {
+      "id": "202610_stay_home",
+      "packId": "adelie_202610_stay_home_v001",
+      "name": "집콕데이",
+      "english": "Stay Home",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stay_home.webp",
+      "source": "assets/Campaigns/202610_stay_home/pack_cover.webp",
+      "sourceSha256": "11376aed5ae887583c8fc0edcfdeb3e6e08282e37a18f343539b8c9ed7053def",
+      "sha256": "7d4d5746e066ef309e8554cdecaf835f24b0bcd77ca205bb8cd1209c9f9f079d"
+    },
+    {
+      "id": "202610_food_review",
+      "packId": "adelie_202610_food_review_v001",
+      "name": "맛집리뷰",
+      "english": "Food Review",
+      "category": "stickers",
+      "cover": "assets/covers/202610_food_review.webp",
+      "source": "assets/Campaigns/202610_food_review/pack_cover.webp",
+      "sourceSha256": "0db8fc14ddfb4f710ea1a55d7aba087ecc00abb184a25afef646598d61d65624",
+      "sha256": "7dfb08bbdaf0d3a1d82a40b4cfff9f32917e40b0994a10831425e83eb878ef6a"
+    },
     {
       "id": "202610_peony",
       "packId": "adelie_202610_peony_v001",
@@ -14,8 +38,8 @@
       "category": "stickers",
       "cover": "assets/covers/202610_peony.webp",
       "source": "assets/Campaigns/202610_peony/pack_cover.webp",
-      "sourceSha256": "a67713acbc79f04b6f628d114245b63a67505801f1314c695831e2659ae15fe6",
-      "sha256": "468ae44f53148b0c1290cf0b5373ede937339738bb493e072fbcc4f470bb732f"
+      "sourceSha256": "20bb412f14b9a2704a6fab49dbd59367f6f178281f802de8204adec56f5507b0",
+      "sha256": "60520e2d7a0a411161da4fc3d6ea50f71ea1adac567e98842794f09a99fea906"
     },
     {
       "id": "202610_airport",
@@ -196,8 +220,8 @@
     {
       "id": "202609_paper_collection_v2",
       "packId": "adelie_202609_paper_collection_v2",
-      "name": "모조지 컬렉션 v2",
-      "english": "Paper Collection v2",
+      "name": "계절 모조지",
+      "english": "Seasonal Papers",
       "category": "papers",
       "cover": "assets/covers/202609_paper_collection_v2.webp",
       "source": "assets/Campaigns/202609_paper_collection_v2/pack_cover.webp",
@@ -293,34 +317,114 @@
       "sha256": "a9d23608a2ced4ea357b591a66dcf90603580f12c8f0ea0fd0606d4220ecf47e"
     },
     {
-      "id": "202609_stained_glass_set_v1",
-      "packId": "adelie_202609_stained_glass_set_v1",
-      "name": "스테인드글라스 세트 v1",
-      "english": "Stained Glass Set V1",
+      "id": "202610_stained_glass_kc_0014",
+      "packId": "adelie_202610_stained_glass_kc_0014",
+      "name": "과일",
+      "english": "Fruits",
       "category": "stickers",
-      "cover": "assets/covers/202609_stained_glass_set_v1.webp",
-      "source": "assets/Campaigns/202609_stained_glass_set_v1/pack_cover.webp",
-      "sourceSha256": "d0c9eb8ba732f67a881077273692a9183498bfdf6a52ede44601048e40cf156c",
-      "sha256": "439ac72007d6e8039bcd3bbfc941d01ce54b715c1e55c9ae1381408bc919a220",
-      "foil": "assets/covers/202609_stained_glass_set_v1-foil.webp",
-      "foilSource": "assets/Campaigns/202609_stained_glass_set_v1/pack_cover_foil.webp",
-      "foilSourceSha256": "8611359ead13a09461f494f479d7f44bcb36d91ae7c2cc7fae3bc49b528ce90d",
-      "foilSha256": "04f9714d4b517ecf608e43018ad59d605b447da348de27987adb5fc924338245"
+      "cover": "assets/covers/202610_stained_glass_kc_0014.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0014/pack_cover.gif",
+      "sourceSha256": "67d977b8bf398662b6f8a1da570411ca8897dd3a43492bac7ff5e824bd704179",
+      "sha256": "7f5d6a531c04dc325d230d1d1b312ee26cbbedd10cc03712b9c73d7d3e9f6271"
     },
     {
-      "id": "202609_stained_glass_set_v2",
-      "packId": "adelie_202609_stained_glass_set_v2",
-      "name": "스테인드글라스 세트 v2",
-      "english": "Stained Glass Set V2",
+      "id": "202610_stained_glass_kc_0015",
+      "packId": "adelie_202610_stained_glass_kc_0015",
+      "name": "바다",
+      "english": "Ocean",
       "category": "stickers",
-      "cover": "assets/covers/202609_stained_glass_set_v2.webp",
-      "source": "assets/Campaigns/202609_stained_glass_set_v2/pack_cover.webp",
-      "sourceSha256": "29ebf8edc0073c6020d96d41945d0463848721604bfaf3c96b1fb5582bfc115c",
-      "sha256": "d786666a3f981b02f35cd11af8a454366c4bf18adbe40c21673980635965c7f5",
-      "foil": "assets/covers/202609_stained_glass_set_v2-foil.webp",
-      "foilSource": "assets/Campaigns/202609_stained_glass_set_v2/pack_cover_foil.webp",
-      "foilSourceSha256": "1e6614b3e2200fa539a84d031150ce0fbbbcdcfe7ec4e83329d47d0f089aebbd",
-      "foilSha256": "db1c3d25e0b8b9a32f4d4bf0f21f731420ed5417020ef1b09d63553cfcf6edac"
+      "cover": "assets/covers/202610_stained_glass_kc_0015.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0015/pack_cover.gif",
+      "sourceSha256": "2e99368e66426db6ab4fb38d30eb2e7ffd97ec3382cd0f3c25da78864f553de3",
+      "sha256": "180899549619b0293f21ee63a65fbc57274b0d72673df6f82072cbf251242fb2"
+    },
+    {
+      "id": "202610_stained_glass_kc_0016",
+      "packId": "adelie_202610_stained_glass_kc_0016",
+      "name": "연꽃",
+      "english": "Lotus Pond",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0016.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0016/pack_cover.gif",
+      "sourceSha256": "8faed614093b039278cd0578afa5e8bafcf73c2f5a9775dbd3962a00b9ab868d",
+      "sha256": "ee8cb4888bba565112a63a0ecf9cb1ed2e013bd3a3d85374aa7a76e84e968d5f"
+    },
+    {
+      "id": "202610_stained_glass_kc_0017",
+      "packId": "adelie_202610_stained_glass_kc_0017",
+      "name": "트로피컬",
+      "english": "Tropical Garden",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0017.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0017/pack_cover.gif",
+      "sourceSha256": "221b5a5789b15bc6a2380ffef719c48b469e1a0142f2335cd58c802ffdd88b25",
+      "sha256": "df85c3af2bf8055ddb448a3406d4f407e576fb462c53dc27c4f1fa6b758ac940"
+    },
+    {
+      "id": "202610_stained_glass_kc_0018",
+      "packId": "adelie_202610_stained_glass_kc_0018",
+      "name": "제비와 아이리스",
+      "english": "Swallows and Irises",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0018.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0018/pack_cover.gif",
+      "sourceSha256": "0a40231cb0022abf01da1ef3416a2bfd6274eed93c42df64e2c6555fd7d58139",
+      "sha256": "a472b54c22dbec29ce9f257576510f01138277746ac706f7395440b55777763a"
+    },
+    {
+      "id": "202610_stained_glass_kc_0019",
+      "packId": "adelie_202610_stained_glass_kc_0019",
+      "name": "보태니컬",
+      "english": "Botanical Windows",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0019.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0019/pack_cover.gif",
+      "sourceSha256": "439a1c564141b7713c65537eed5173b879626f609ff2e58c4bcb85095f12f74b",
+      "sha256": "9ebeeb786ccf7143f59bb0fee78334f80dc5d36a6e87a52cddfb8ce734982160"
+    },
+    {
+      "id": "202610_stained_glass_kc_0020",
+      "packId": "adelie_202610_stained_glass_kc_0020",
+      "name": "바다의 이야기",
+      "english": "Story of the Sea",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0020.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0020/pack_cover.gif",
+      "sourceSha256": "d65b083bd2339d25f4dd6317210bae1f76b78787457caf3c360c7132e5362ade",
+      "sha256": "7d17757009fe25030f2dcf05d6183427dc5eb9d1732802dd313b63a0e3ad7c09"
+    },
+    {
+      "id": "202610_stained_glass_kc_0021",
+      "packId": "adelie_202610_stained_glass_kc_0021",
+      "name": "꿈 속 조각들",
+      "english": "Pieces in a Dream",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0021.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0021/pack_cover.gif",
+      "sourceSha256": "7589d7effdde7f502bc787c6e3a83dff6c5fb76fa61a119955066c295f7d1feb",
+      "sha256": "bf6dcc69420e4f404097311a230473e68ecfef79811a762736a0f5deb599660e"
+    },
+    {
+      "id": "202610_stained_glass_kc_0022",
+      "packId": "adelie_202610_stained_glass_kc_0022",
+      "name": "마이 유니버스",
+      "english": "My Universe",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0022.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0022/pack_cover.gif",
+      "sourceSha256": "b73f9a5b0193e636cdea0ebade183bfeb175277c819fe51c83616628ae0c2f35",
+      "sha256": "6c3f4622387e575ffe015876b744155e7ca5c874350e493fddd57e0a87fb2ff1"
+    },
+    {
+      "id": "202610_stained_glass_kc_0023",
+      "packId": "adelie_202610_stained_glass_kc_0023",
+      "name": "우주 유영",
+      "english": "Swimming in Space",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0023.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0023/pack_cover.gif",
+      "sourceSha256": "ccd03a1e70cd7af5b8c384974d635d5aa611018d49596c800890579aeeb33731",
+      "sha256": "ff3b28a404ff9478df1ec8407f6e58b97e56e114a8f992cc5567646fd5b5d25c"
     },
     {
       "id": "202608_everyday_paper_basics",
@@ -332,6 +436,17 @@
       "source": "assets/Campaigns/202608_everyday_paper_basics/pack_cover.webp",
       "sourceSha256": "f4798f153b3100a61ce0b77f7265a44f6778e73df313b0a7ae2468a8e9fcdbf5",
       "sha256": "cc5d5ab4713a750d68dbf40bf6555c2940fcc5f4d38fc847a5e73aa66c49a88d"
+    },
+    {
+      "id": "202610_stained_glass_kc_0024",
+      "packId": "adelie_202610_stained_glass_kc_0024",
+      "name": "달토끼 춤",
+      "english": "Moon Rabbit Dance",
+      "category": "stickers",
+      "cover": "assets/covers/202610_stained_glass_kc_0024.webp",
+      "source": "assets/Campaigns/202610_stained_glass_kc_0024/pack_cover.gif",
+      "sourceSha256": "9fbb60e372b761893ab2155614a8043cd724d63a8673e98ec8a2e4d7aa665710",
+      "sha256": "146d8b4894bd99f02a4b8c68ecd9973e4995bb4339e8b33eca3619d03ff60ef4"
     },
     {
       "id": "202608_home_sweet_home_digital",
@@ -347,8 +462,8 @@
     {
       "id": "202608_spring_fox_renewal",
       "packId": "adelie_202608_spring_fox_renewal_v001",
-      "name": "봄여우 리뉴얼",
-      "english": "Spring Fox Renewal",
+      "name": "봄여우",
+      "english": "Spring Fox",
       "category": "stickers",
       "cover": "assets/covers/202608_spring_fox_renewal.webp",
       "source": "assets/Campaigns/202608_spring_fox_renewal/pack_cover.webp",
@@ -358,8 +473,8 @@
     {
       "id": "202608_lemon_pound_cake",
       "packId": "adelie_202608_lemon_pound_cake_v001",
-      "name": "레몬 파운드 케이크 스티커팩",
-      "english": "Lemon Pound Cake Sticker Pack",
+      "name": "레몬 파운드 케이크",
+      "english": "Lemon Pound Cake",
       "category": "stickers",
       "cover": "assets/covers/202608_lemon_pound_cake.webp",
       "source": "assets/Campaigns/202608_lemon_pound_cake/pack_cover.webp",

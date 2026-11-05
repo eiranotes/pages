@@ -14,3 +14,7 @@
 - [x] Add three independent pack pages and 99 individually viewable stickers.
 - [x] Verify 18-pack fixture, search/filter intersection, empty reset, dialog keyboard/focus and boundaries.
 - [x] Adopt Korean-inclusive WOFF2 and reduce mobile screenshot stacking.
+
+- [x] Replace app captures with App Store screenshots; resync 43 pack covers; update release copy (2026-11-06).
+- [x] Add App Store links with per-country storefront routing (2026-11-06).
+- [ ] Add a Google Play link when Android leaves testing.

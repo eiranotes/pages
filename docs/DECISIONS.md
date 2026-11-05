@@ -12,6 +12,24 @@ Header refinement: reuse the already-published app-icon.webp without recoloring 
 The wordmark uses the app indigo token. On narrow screens, navigation moves below the brand.
 Detailed copy explains current on-device editing and image sharing; it does not promise cloud sync or downloadable templates.
 
+## App Store screenshots and release wording · 2026-11-06
+
+User asked to replace the in-development app captures with the screenshots submitted to App Store
+review. The app section now shows the Korean iPhone set (v4, MD5 equal to App Store Connect's
+`APP_IPHONE_67` ko set) as one sideways-scrolling row of 660×1434 WebP derivatives. Panel 05
+("아델리 오리지널 스티커 800+", "무료 팩 11종") is left out because the site keeps catalogue
+numbers out of copy (2026-10-25 rule); the other six are used unchanged.
+Release wording and store link: the iOS app is on sale in 175 territories (App Store Connect) and
+its public page loads (checked kr/us/jp/tw/cn/gb/fr/de/hk, 2026-11-06 afternoon; it returned 404 that
+morning). This supersedes "do not claim store availability". The hero's primary button, the FAQ
+answer and the about label link to the user-given Korean URL; `app.js` rewrites the storefront from
+the browser language so visitors land in their own country's store (Apple redirects storefronts it
+does not run to `us`, so no allowlist is kept). Android is described as in testing; no Play link.
+The /info/ page is static per language block, so its links are fixed to kr/us/jp/cn (zh block is zh-CN).
+The privacy policy still calls the app "공개 준비 중"; legal text is left for a separate review.
+Pack covers were resynced to app main 379638c8: 43 covers (stained glass sets v1/v2 replaced by
+kc_0014–0024, stay home and food review added). No cover has a foil mask any more.
+
 ## No individual sticker pages · 2026-10-25
 
 User asked to remove per-sticker viewing because it lets visitors copy the artwork. The three

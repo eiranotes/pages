@@ -34,3 +34,17 @@ Covers tilt slightly like placed stickers, the Stained Glass Set v2 cover carrie
 sweep, and the rows slide in when the section enters view. Motion pauses on hover/focus,
 off screen and with a "흐름 멈추기" button; reduced-motion readers get a still, scrollable row.
 Per-pack sticker pages stay reachable from a single line of links below the covers.
+
+## 2026-11-06
+
+### App Store screenshots and current release wording
+
+The "Inside Adelie Pages" section shows six of the App Store screenshots in one sideways-scrolling
+row (about four at a time on desktop, a peek of the next panel on tablet and phone). The three
+in-development captures and their gallery CSS are removed.
+Copy no longer says the app is in development. The hero now leads with "App Store에서 받기"
+(the sticker link becomes a text link beside it); the FAQ answer and the about label link to the
+App Store too, each opening the visitor's own storefront by browser language. Android is in testing.
+The app information page (/info/) replaces the September "preparing release" paragraph in all four
+languages with an App Store link to that language's storefront (ko→kr, en→us, ja→jp, zh-CN→cn).
+Pack covers resynced to the app catalogue: 43 covers.

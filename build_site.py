@@ -24,7 +24,7 @@ def catalog(covers):
 {flow_row(covers[half:],'right')}
 </div>
 <div class="flow-foot wrap"><button type="button" class="flow-toggle" id="flow-toggle" aria-pressed="false" data-enhanced hidden>흐름 멈추기</button></div>
-<p class="catalog-footnote wrap">개발 중인 앱에 담긴 팩 표지예요. 출시 때 구성은 달라질 수 있어요.</p>
+<p class="catalog-footnote wrap">앱에 담긴 스티커팩 표지예요. 새 팩이 나오면 이 흐름에도 함께 더해져요.</p>
 </section>'''
 
 def load_covers():

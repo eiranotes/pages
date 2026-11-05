@@ -31,3 +31,10 @@ Search/filter/card grid code and CSS removed; the three published sticker detail
 QA: tool/flow_qa.mjs (widths 1440/1002/390, motion, pause, reduced motion, console) → QA/pack-flow-20261008/.
 Covers of packs still in app `internalReview` are published on the user's instruction (approval to be finalized).
 The 2026-09-14 kiss-cut (KC 0020–0024) detail pages are not published; the user chose not to include them.
+
+## App Store screenshots · 2026-11-06
+
+App section uses six App Store review screenshots (ko iPhone v4; panel 05 skipped for catalogue numbers). Pack covers: 43 from app main 379638c8.
+App Store links (hero button, FAQ, about) go to the Korean URL and are rewritten to the visitor's storefront by browser language.
+/info/ release status (4 languages) links to the matching storefront: kr, us, jp, cn; last updated 2026-11-06.
+QA (Ego Lite, 1440/834/390): no horizontal page overflow, no broken images, 43 announced covers, flow moves and pauses; storefront per language ko-KR→kr, ja→jp, en-US→us, en-GB→gb, zh-Hant→tw, zh-CN→cn, zh-HK→hk, fr-FR→fr, de→de → QA/store-shots-20261106/.

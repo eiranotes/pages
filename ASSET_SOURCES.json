@@ -35,21 +35,6 @@
     "source_sha256": "4f536bbdc562f11097eb53d21950d18e6923b2327e9f9d4865a4ee1db84b6a87"
   },
   {
-    "file": "app-editor.webp",
-    "source": "Adelie Pages Work/media-production/adelie-pages-reel-v6/reel/assets/app/g_done.png",
-    "source_sha256": "7506a484b57c6d7491339c69c5b713a249a31784c4a48e4afe8e5d2b85912bd4"
-  },
-  {
-    "file": "app-home.webp",
-    "source": "Adelie Pages Work/media-production/_legacy/adelie-pages-reel-v6-work/reel-assets-app-unused/home.png",
-    "source_sha256": "2ae9ab13559fa3ac531e20f3b986c4e11c3b9d7725ef66fc549a24cd5746068a"
-  },
-  {
-    "file": "app-pages.webp",
-    "source": "Adelie Pages Work/media-production/_legacy/adelie-pages-reel-v6-work/reel-assets-app-unused/pages.png",
-    "source_sha256": "a6e3b57d207c68765a4214b7a38f235219f5a1d170c3ceeaf5f9bfe066e2ae64"
-  },
-  {
     "file": "lemon-page.webp",
     "source": "Adelie Pages/site/sol/assets/img/editorial/lemon-page.png",
     "source_sha256": "d113bbf8214f9b5118a6494748a280d4fa73f4b7f5a69a47ead128c91f21973c"
@@ -82,5 +67,41 @@
     "file": "media/reel-v6.mp4",
     "source": "Adelie Pages Work/media-production/adelie-pages-reel-v6/out/adelie_pages_reel_v6.mp4",
     "source_sha256": "a4b40d26e9210491e1de652d8ce2d1dc43d58e473a89c5745b6d2e400d00a8ad"
+  },
+  {
+    "file": "store/01-hero.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/01_hero.png",
+    "source_sha256": "36aae6dd600588902bf6bdb29e691a56e1e4f3981fa360850863731a78009710",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
+  },
+  {
+    "file": "store/02-illustration.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/02_illustration.png",
+    "source_sha256": "d7d0592fc0a1a451ca51c4488aecf7aae7d1d514e966f17485ee02e00910a12c",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
+  },
+  {
+    "file": "store/03-edit.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/03_edit.png",
+    "source_sha256": "4c7fe01b198dfdab6ecb16a3d43b95a3964116b0d4b4d097850c9dd53bf725ed",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
+  },
+  {
+    "file": "store/04-tray.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/04_tray.png",
+    "source_sha256": "e38ffd7d5b9e2a9eb160e8ef0d80a3bec546f330a6244a7d034c29ae526b1bf7",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
+  },
+  {
+    "file": "store/06-export.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/06_export.png",
+    "source_sha256": "7ae3acfbc91c3b2e645ce5ab235c4c85c3c5b62845ec89231a2526e4fac86c22",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
+  },
+  {
+    "file": "store/07-pages.webp",
+    "source": "Adelie Pages QA/_from_worktrees/adelide-draw-website-mockup-3a8cd5/QA/app_store_screenshots/v4_iphone_ko/07_pages.png",
+    "source_sha256": "565da2411c929e826245675bb83d52d209f9aa929d620b0be10a0e4d0c2f4265",
+    "note": "App Store Connect APP_IPHONE_67 ko screenshot (MD5 matches ASC sourceFileChecksum, 2026-11-06)"
   }
 ]
