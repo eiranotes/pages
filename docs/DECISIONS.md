@@ -12,6 +12,22 @@ Header refinement: reuse the already-published app-icon.webp without recoloring 
 The wordmark uses the app indigo token. On narrow screens, navigation moves below the brand.
 Detailed copy explains current on-device editing and image sharing; it does not promise cloud sync or downloadable templates.
 
+## Store QR landing · 2026-11-09
+
+User asked for one QR code that opens the right store on any phone, with the app icon's penguin in
+the middle. The QR encodes `https://app.adeliedraw.com/pages/get/` (`public/get/`, noindex).
+Path, not a subdomain: `app.adeliedraw.com` is the only name pointed at GitHub Pages; every other
+`*.adeliedraw.com` (get/go/pages…) is caught by a cafe24 wildcard and lands on the shop, so a
+subdomain needs a DNS change plus its own Pages repo for no gain (the QR stays version 5 either way).
+`get.js` sends iPhone/iPad (including iPadOS desktop UA) to the App Store link `app.js` has already
+moved to the visitor's storefront; Apple's page then opens the App Store app. Android redirects
+only when the page carries `a[data-play-store]` (the Play URL is commented in place; Play returns 404
+until release); until then Android and desktop see the choices in ko/en/ja/zh.
+The country-less `apps.apple.com/app/id…` was rejected: Apple sends it to `us`.
+QR art: no generated image. `tool/make_store_qr.py` cuts the white circle (with a thin ring of icon
+blue) from the app's committed icon, leaves out the modules beneath it (error correction H) and
+decodes the result at 132–2250 px. Outputs live in `qr/`, outside the deployed `public/`.
+
 ## App Store screenshots and release wording · 2026-11-06
 
 User asked to replace the in-development app captures with the screenshots submitted to App Store

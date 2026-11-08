@@ -38,3 +38,10 @@ App section uses six App Store review screenshots (ko iPhone v4; panel 05 skippe
 App Store links (hero button, FAQ, about) go to the Korean URL and are rewritten to the visitor's storefront by browser language.
 /info/ release status (4 languages) links to the matching storefront: kr, us, jp, cn; last updated 2026-11-06.
 QA (Ego Lite, 1440/834/390): no horizontal page overflow, no broken images, 43 announced covers, flow moves and pauses; storefront per language ko-KR→kr, ja→jp, en-US→us, en-GB→gb, zh-Hant→tw, zh-CN→cn, zh-HK→hk, fr-FR→fr, de→de → QA/store-shots-20261106/.
+
+## Store QR · 2026-11-09
+
+QR → https://app.adeliedraw.com/pages/get/ : iOS → App Store per storefront; Android → Play once linked (now "in testing"); desktop → choices.
+QR files in qr/ (PNG 2250 px, SVG), made by tool/make_store_qr.py from the app icon; decode-checked down to 132 px.
+QA (Ego Lite, local): desktop ko/ja text and storefront, iPhone ko/ja/en-US/zh-TW → apps.apple.com kr/jp/us/tw → itms-appss, iPadOS desktop UA → App Store, Android → stays with "in testing" → QA/get-redirect-20261109/.
+

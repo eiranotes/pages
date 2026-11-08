@@ -48,3 +48,9 @@ App Store too, each opening the visitor's own storefront by browser language. An
 The app information page (/info/) replaces the September "preparing release" paragraph in all four
 languages with an App Store link to that language's storefront (ko→kr, en→us, ja→jp, zh-CN→cn).
 Pack covers resynced to the app catalogue: 43 covers.
+
+## 2026-11-09 · Store QR
+
+- New `/pages/get/` landing for the QR code: iPhone and iPad go straight to their country's App Store; Android will go to Google Play once the link is added; other devices see App Store, the Android status and the intro link in ko/en/ja/zh.
+- `qr/adelie-pages-get.png` (2250 px) and `.svg` (vector modules) with the app icon's penguin disc in the centre; rebuild with `tool/make_store_qr.py`.
+

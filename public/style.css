@@ -89,3 +89,4 @@ h3{font-weight:400;letter-spacing:-.02em;margin:0;line-height:1.5;word-break:kee
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 30px;margin-top:34px}.hero-actions .button,.hero-actions .text-link{margin-top:0}
 .questions-list details p a{color:var(--ad-indigo);border-bottom:1px solid currentColor}
 @media(max-width:639px){.hero-actions{margin-top:26px;gap:10px 24px}}
+.get{min-height:calc(100svh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding-block:56px;text-align:center}.get-icon{width:96px;height:96px;border-radius:22px;margin-bottom:12px}.get h1{font-size:clamp(28px,4vw,40px);line-height:1.3}.get .button{margin-top:18px}.get-note{font-size:13px;color:var(--secondary)}.get .text-link{margin-top:8px}

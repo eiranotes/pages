@@ -17,4 +17,5 @@
 
 - [x] Replace app captures with App Store screenshots; resync 43 pack covers; update release copy (2026-11-06).
 - [x] Add App Store links with per-country storefront routing (2026-11-06).
-- [ ] Add a Google Play link when Android leaves testing.
+- [x] Store QR code and `/pages/get/` landing (2026-11-09).
+- [ ] Add a Google Play link when Android leaves testing: index.html copy, FAQ, and uncomment the `data-play-store` button in `get/index.html` (Android then redirects; the QR does not change).
