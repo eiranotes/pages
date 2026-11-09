@@ -3,10 +3,12 @@
 The disc is cut from the app's committed icon (assets/branding/adelie_app_icon.png, read with
 `git show` like sync_pack_covers.py): the white circle, the penguin and a thin ring of the icon blue.
 Modules under the disc are left out rather than painted over; error correction H covers them.
-Writes qr/adelie-pages-get.png and .svg, then decodes the PNG at several sizes to prove it scans.
+Writes qr/<name>.png and .svg, then decodes the PNG at several sizes to prove it scans.
+The overseas shop QR (app.adeliedraw.com/shop/, served by eiranotes.github.io) uses the same style:
+  python3 tool/make_store_qr.py --url https://app.adeliedraw.com/shop/ --name adelie-draw-shop
 
 Needs segno, Pillow and zxing-cpp (dev only, e.g. a /tmp venv). Not deployed: qr/ is outside public/.
-Usage: python3 tool/make_store_qr.py [--app PATH] [--ref REF]
+Usage: python3 tool/make_store_qr.py [--url URL --name NAME] [--app PATH] [--ref REF]
 """
 import argparse
 import base64
@@ -41,8 +43,8 @@ def penguin_disc(app, ref, size):
     return disc
 
 
-def layout():
-    qr = segno.make(URL, error='h', micro=False, boost_error=False)
+def layout(url):
+    qr = segno.make(url, error='h', micro=False, boost_error=False)
     n = len(qr.matrix)
     logo = LOGO_RATIO * n
     clear = logo / 2 + 0.6     # keep a white gap around the disc
@@ -65,7 +67,7 @@ def png(disc, n, logo, dark):
     return img
 
 
-def svg(disc, n, logo, dark):
+def svg(disc, n, logo, dark, url):
     side = n + 2 * BORDER
     path = ''.join(f'M{col + BORDER} {row + BORDER}h1v1h-1z' for col, row in dark)
     buf = io.BytesIO()
@@ -73,17 +75,17 @@ def svg(disc, n, logo, dark):
     href = 'data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode()
     at = (side - logo) / 2
     return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {side} {side}" shape-rendering="crispEdges">'
-            f'<title>Adelie Pages — {URL}</title><rect width="{side}" height="{side}" fill="#fff"/>'
+            f'<title>{url}</title><rect width="{side}" height="{side}" fill="#fff"/>'
             f'<path fill="{INK}" d="{path}"/>'
             f'<image xlink:href="{href}" x="{at:.3f}" y="{at:.3f}" width="{logo:.3f}" height="{logo:.3f}"/></svg>\n')
 
 
-def check(img):
+def check(img, url):
     for width in (img.width, 600, 240, 132):
         small = img.resize((width, width), Image.LANCZOS)
         for label, probe in (('sharp', small), ('blur', small.filter(ImageFilter.GaussianBlur(width / 400)))):
             found = [r.text for r in zxingcpp.read_barcodes(probe)]
-            assert found == [URL], (width, label, found)
+            assert found == [url], (width, label, found)
     print(f'scan OK at {img.width}/600/240/132 px, sharp and blurred')
 
 
@@ -91,15 +93,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--app', type=Path, default=DEFAULT_APP)
     parser.add_argument('--ref', default='main')
+    parser.add_argument('--url', default=URL)
+    parser.add_argument('--name', default='adelie-pages-get')
     args = parser.parse_args()
-    qr, n, logo, dark = layout()
+    qr, n, logo, dark = layout(args.url)
     disc = penguin_disc(args.app, args.ref, 1024)
     OUT.mkdir(exist_ok=True)
     img = png(disc, n, logo, dark)
-    img.save(OUT / 'adelie-pages-get.png', optimize=True)
-    (OUT / 'adelie-pages-get.svg').write_text(svg(disc, n, logo, dark))
-    print(f'{URL} -> version {qr.version}-{qr.error}, {n}x{n} modules, disc {logo:.1f} modules, {img.width}px PNG')
-    check(img)
+    img.save(OUT / f'{args.name}.png', optimize=True)
+    (OUT / f'{args.name}.svg').write_text(svg(disc, n, logo, dark, args.url))
+    print(f'{args.url} -> version {qr.version}-{qr.error}, {n}x{n} modules, disc {logo:.1f} modules, {img.width}px PNG')
+    check(img, args.url)
 
 
 if __name__ == '__main__':

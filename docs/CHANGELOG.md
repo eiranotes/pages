@@ -53,4 +53,4 @@ Pack covers resynced to the app catalogue: 43 covers.
 
 - New `/pages/get/` landing for the QR code: iPhone and iPad go straight to their country's App Store; Android will go to Google Play once the link is added; other devices see App Store, the Android status and the intro link in ko/en/ja/zh.
 - `qr/adelie-pages-get.png` (2250 px) and `.svg` (vector modules) with the app icon's penguin disc in the centre; rebuild with `tool/make_store_qr.py`.
-
+- Overseas shop QR `qr/adelie-draw-shop.png`/`.svg` in the same style, pointing at `app.adeliedraw.com/shop/` (Japan → jp.adeliedraw.com, others → en.adeliedraw.com). The tool takes `--url` and `--name`.
