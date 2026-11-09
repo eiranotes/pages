@@ -55,3 +55,4 @@ Pack covers resynced to the app catalogue: 43 covers.
 - `qr/adelie-pages-get.png` (2250 px) and `.svg` (vector modules) with the app icon's penguin disc in the centre; rebuild with `tool/make_store_qr.py`.
 - Overseas shop QR `qr/adelie-draw-shop.png`/`.svg` in the same style, pointing at `app.adeliedraw.com/shop/` (Japan → jp.adeliedraw.com, others → en.adeliedraw.com). The tool takes `--url` and `--name`.
 - Penguin variants `qr/adelie-pages-get-penguin.*` and `qr/adelie-draw-shop-penguin.*`: the user's wing-spread penguin in the centre, modules cleared along its outline, penguin navy #273777. The tool gained `--logo`, `--logo-ratio` and `--ink`; the icon-disc QRs were regenerated with the shared silhouette rule (same URLs, a few edge modules differ).
+- Canonical QRs are the app-icon disc versions for both the app and the shop, now 5400/4920 px (`--scale`, default 120 px/module) with the disc at native icon resolution.

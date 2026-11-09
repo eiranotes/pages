@@ -17,6 +17,8 @@ Images are WebP derivatives. LINE Seed fonts include their full original OFL not
 App Store links (`a[data-app-store]`) default to https://apps.apple.com/kr/app/adelie-pages/id6822323315.
 `public/app.js` swaps `kr` for the visitor's storefront from the first browser language with a region
 (`Intl.Locale.maximize()`, so `ja` → `jp`, `zh-Hant` → `tw`); Apple sends unknown storefronts to `us`.
+Canonical QR codes (decided 2026-11-09): the app-icon disc versions, `qr/adelie-pages-get.*` and
+`qr/adelie-draw-shop.*`, so the app and shop codes match. The `*-penguin.*` files are an unused trial.
 QR code: `qr/adelie-pages-get.{png,svg}` encode https://app.adeliedraw.com/pages/get/, which sends iOS to the
 App Store (same storefront rule) and Android to Google Play once `get/index.html` has an `a[data-play-store]` link.
 Rebuild with `python3 tool/make_store_qr.py` (needs segno, Pillow, zxing-cpp in a dev venv).

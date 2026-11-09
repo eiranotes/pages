@@ -29,7 +29,7 @@ ICON = 'assets/branding/adelie_app_icon.png'
 URL = 'https://app.adeliedraw.com/pages/get/'
 INK = '#093488'          # the icon's background blue
 BORDER = 4               # quiet zone, modules
-SCALE = 50               # px per module in the PNG
+SCALE = 120              # px per module in the PNG (5400 px for the app QR)
 LOGO_RATIO = 0.30        # logo width / symbol width
 MARGIN = 0.6             # white gap around the logo, modules
 DISC = (1023, 1044, 886)  # centre x, centre y, radius on the 2048 px icon (white circle + blue ring)
@@ -71,14 +71,14 @@ def layout(url, logo_img, ratio):
     return qr, n, logo, dark
 
 
-def png(logo_img, n, logo, dark, ink):
-    side = (n + 2 * BORDER) * SCALE
+def png(logo_img, n, logo, dark, ink, scale=SCALE):
+    side = (n + 2 * BORDER) * scale
     img = Image.new('RGB', (side, side), 'white')
     draw = ImageDraw.Draw(img)
     for col, row in dark:
-        x, y = (col + BORDER) * SCALE, (row + BORDER) * SCALE
-        draw.rectangle((x, y, x + SCALE - 1, y + SCALE - 1), fill=ink)
-    d = round(logo * SCALE)
+        x, y = (col + BORDER) * scale, (row + BORDER) * scale
+        draw.rectangle((x, y, x + scale - 1, y + scale - 1), fill=ink)
+    d = round(logo * scale)
     at = (side - d) // 2
     scaled = logo_img.resize((d, d), Image.LANCZOS)
     img.paste(scaled, (at, at), scaled)
@@ -116,11 +116,12 @@ def main():
     parser.add_argument('--logo', type=Path, help='transparent image instead of the app icon disc')
     parser.add_argument('--logo-ratio', type=float, default=LOGO_RATIO)
     parser.add_argument('--ink', default=INK)
+    parser.add_argument('--scale', type=int, default=SCALE, help='PNG px per module')
     args = parser.parse_args()
-    logo_img = custom_logo(args.logo) if args.logo else penguin_disc(args.app, args.ref, 1024)
+    logo_img = custom_logo(args.logo) if args.logo else penguin_disc(args.app, args.ref, 2 * DISC[2])
     qr, n, logo, dark = layout(args.url, logo_img, args.logo_ratio)
     OUT.mkdir(exist_ok=True)
-    img = png(logo_img, n, logo, dark, args.ink)
+    img = png(logo_img, n, logo, dark, args.ink, args.scale)
     img.save(OUT / f'{args.name}.png', optimize=True)
     (OUT / f'{args.name}.svg').write_text(svg(logo_img, n, logo, dark, args.url, args.ink))
     print(f'{args.url} -> version {qr.version}-{qr.error}, {n}x{n} modules, logo {logo:.1f} modules, {img.width}px PNG')

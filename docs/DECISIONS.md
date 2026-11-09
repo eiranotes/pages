@@ -28,6 +28,11 @@ QR art: no generated image. `tool/make_store_qr.py` cuts the white circle (with 
 blue) from the app's committed icon, leaves out the modules beneath it (error correction H) and
 decodes the result at 132–2250 px. Outputs live in `qr/`, outside the deployed `public/`.
 
+Canonical QR (2026-11-09): user chose the app-icon disc for both the app (`/pages/get/`) and the overseas
+shop (`app.adeliedraw.com/shop/`) codes so they match; the wing-spread penguin variant was tried and not
+adopted. Canonical PNGs are 120 px/module (5400 px app, 4920 px shop) with the disc at the icon's native
+resolution; SVG keeps vector modules.
+
 ## App Store screenshots and release wording · 2026-11-06
 
 User asked to replace the in-development app captures with the screenshots submitted to App Store
