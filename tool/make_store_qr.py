@@ -8,7 +8,9 @@ The overseas shop QR (app.adeliedraw.com/shop/, served by eiranotes.github.io) u
   python3 tool/make_store_qr.py --url https://app.adeliedraw.com/shop/ --name adelie-draw-shop
 
 Needs segno, Pillow and zxing-cpp (dev only, e.g. a /tmp venv). Not deployed: qr/ is outside public/.
-Usage: python3 tool/make_store_qr.py [--url URL --name NAME] [--app PATH] [--ref REF]
+Another logo: --logo a transparent PNG; modules are left out along its silhouette (plus MARGIN).
+Usage: python3 tool/make_store_qr.py [--url URL --name NAME] [--logo PNG --logo-ratio R --ink HEX]
+                                     [--app PATH] [--ref REF]
 """
 import argparse
 import base64
@@ -28,7 +30,8 @@ URL = 'https://app.adeliedraw.com/pages/get/'
 INK = '#093488'          # the icon's background blue
 BORDER = 4               # quiet zone, modules
 SCALE = 50               # px per module in the PNG
-LOGO_RATIO = 0.30        # disc diameter / symbol width
+LOGO_RATIO = 0.30        # logo width / symbol width
+MARGIN = 0.6             # white gap around the logo, modules
 DISC = (1023, 1044, 886)  # centre x, centre y, radius on the 2048 px icon (white circle + blue ring)
 
 
@@ -43,40 +46,55 @@ def penguin_disc(app, ref, size):
     return disc
 
 
-def layout(url):
+def custom_logo(path):
+    """A transparent image, padded to a centred square; its silhouette decides which modules go."""
+    img = Image.open(path).convert('RGBA')
+    img = img.crop(img.getchannel('A').point(lambda v: 255 if v > 8 else 0).getbbox())
+    side = max(img.size)
+    square = Image.new('RGBA', (side, side))
+    square.paste(img, ((side - img.width) // 2, (side - img.height) // 2))
+    return square
+
+
+def layout(url, logo_img, ratio):
+    """Leave out every module the logo (grown by MARGIN modules) touches, so no cut modules show."""
     qr = segno.make(url, error='h', micro=False, boost_error=False)
     n = len(qr.matrix)
-    logo = LOGO_RATIO * n
-    clear = logo / 2 + 0.6     # keep a white gap around the disc
-    c = n / 2
+    logo, k = ratio * n, 20
+    canvas = Image.new('L', (n * k, n * k))
+    size = round(logo * k)
+    canvas.paste(logo_img.getchannel('A').resize((size, size), Image.LANCZOS), ((n * k - size) // 2,) * 2)
+    grow = 2 * round(MARGIN * k) + 1
+    canvas = canvas.point(lambda v: 255 if v > 40 else 0).filter(ImageFilter.MaxFilter(grow))
     dark = [(col, row) for row, line in enumerate(qr.matrix) for col, bit in enumerate(line)
-            if bit & 1 and ((col + .5 - c) ** 2 + (row + .5 - c) ** 2) ** .5 > clear]
+            if bit & 1 and not canvas.crop((col * k, row * k, (col + 1) * k, (row + 1) * k)).getextrema()[1]]
     return qr, n, logo, dark
 
 
-def png(disc, n, logo, dark):
+def png(logo_img, n, logo, dark, ink):
     side = (n + 2 * BORDER) * SCALE
     img = Image.new('RGB', (side, side), 'white')
     draw = ImageDraw.Draw(img)
     for col, row in dark:
         x, y = (col + BORDER) * SCALE, (row + BORDER) * SCALE
-        draw.rectangle((x, y, x + SCALE - 1, y + SCALE - 1), fill=INK)
+        draw.rectangle((x, y, x + SCALE - 1, y + SCALE - 1), fill=ink)
     d = round(logo * SCALE)
     at = (side - d) // 2
-    img.paste(disc.resize((d, d), Image.LANCZOS), (at, at), disc.resize((d, d), Image.LANCZOS))
+    scaled = logo_img.resize((d, d), Image.LANCZOS)
+    img.paste(scaled, (at, at), scaled)
     return img
 
 
-def svg(disc, n, logo, dark, url):
+def svg(logo_img, n, logo, dark, url, ink):
     side = n + 2 * BORDER
     path = ''.join(f'M{col + BORDER} {row + BORDER}h1v1h-1z' for col, row in dark)
     buf = io.BytesIO()
-    disc.save(buf, 'PNG', optimize=True)
+    logo_img.save(buf, 'PNG', optimize=True)
     href = 'data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode()
     at = (side - logo) / 2
     return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {side} {side}" shape-rendering="crispEdges">'
             f'<title>{url}</title><rect width="{side}" height="{side}" fill="#fff"/>'
-            f'<path fill="{INK}" d="{path}"/>'
+            f'<path fill="{ink}" d="{path}"/>'
             f'<image xlink:href="{href}" x="{at:.3f}" y="{at:.3f}" width="{logo:.3f}" height="{logo:.3f}"/></svg>\n')
 
 
@@ -95,14 +113,17 @@ def main():
     parser.add_argument('--ref', default='main')
     parser.add_argument('--url', default=URL)
     parser.add_argument('--name', default='adelie-pages-get')
+    parser.add_argument('--logo', type=Path, help='transparent image instead of the app icon disc')
+    parser.add_argument('--logo-ratio', type=float, default=LOGO_RATIO)
+    parser.add_argument('--ink', default=INK)
     args = parser.parse_args()
-    qr, n, logo, dark = layout(args.url)
-    disc = penguin_disc(args.app, args.ref, 1024)
+    logo_img = custom_logo(args.logo) if args.logo else penguin_disc(args.app, args.ref, 1024)
+    qr, n, logo, dark = layout(args.url, logo_img, args.logo_ratio)
     OUT.mkdir(exist_ok=True)
-    img = png(disc, n, logo, dark)
+    img = png(logo_img, n, logo, dark, args.ink)
     img.save(OUT / f'{args.name}.png', optimize=True)
-    (OUT / f'{args.name}.svg').write_text(svg(disc, n, logo, dark, args.url))
-    print(f'{args.url} -> version {qr.version}-{qr.error}, {n}x{n} modules, disc {logo:.1f} modules, {img.width}px PNG')
+    (OUT / f'{args.name}.svg').write_text(svg(logo_img, n, logo, dark, args.url, args.ink))
+    print(f'{args.url} -> version {qr.version}-{qr.error}, {n}x{n} modules, logo {logo:.1f} modules, {img.width}px PNG')
     check(img, args.url)
 
 

@@ -22,6 +22,8 @@ App Store (same storefront rule) and Android to Google Play once `get/index.html
 Rebuild with `python3 tool/make_store_qr.py` (needs segno, Pillow, zxing-cpp in a dev venv).
 `qr/adelie-draw-shop.*` is the overseas shop QR in the same style (`--url https://app.adeliedraw.com/shop/
 --name adelie-draw-shop`); its landing lives in eiranotes.github.io (`shop/`: Japan → jp mall, else → en mall).
+`*-penguin.*` use the user's wing-spread penguin (`qr/penguin-wings-logo.png`): `--logo qr/penguin-wings-logo.png
+--logo-ratio 0.38 --ink '#273777'`. With `--logo`, modules are left out along the image's silhouette.
 The app section shows the App Store screenshots (`public/assets/store/`, sources in ASSET_SOURCES.json).
 See docs for scope and checks. Artwork remains owned by Adelie Draw; no reuse license is granted.
 
