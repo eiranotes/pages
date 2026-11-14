@@ -20,7 +20,8 @@ App Store links (`a[data-app-store]`) default to https://apps.apple.com/kr/app/a
 Canonical QR codes (decided 2026-11-09): the app-icon disc versions, `qr/adelie-pages-get.*` and
 `qr/adelie-draw-shop.*`, so the app and shop codes match. The `*-penguin.*` files are an unused trial.
 QR code: `qr/adelie-pages-get.{png,svg}` encode https://app.adeliedraw.com/pages/get/, which sends iOS to the
-App Store (same storefront rule) and Android to Google Play once `get/index.html` has an `a[data-play-store]` link.
+App Store (same storefront rule) and Android to Google Play (`a[data-play-store]`, live since 2026-11-14).
+Google Play links (`a[data-play-store]`) sit next to the App Store links; no storefront rewrite.
 Rebuild with `python3 tool/make_store_qr.py` (needs segno, Pillow, zxing-cpp in a dev venv).
 `qr/adelie-draw-shop.*` is the overseas shop QR in the same style (`--url https://app.adeliedraw.com/shop/
 --name adelie-draw-shop`); its landing lives in eiranotes.github.io (`shop/`: Japan → jp mall, else → en mall).

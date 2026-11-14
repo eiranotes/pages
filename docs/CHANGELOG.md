@@ -56,3 +56,9 @@ Pack covers resynced to the app catalogue: 43 covers.
 - Overseas shop QR `qr/adelie-draw-shop.png`/`.svg` in the same style, pointing at `app.adeliedraw.com/shop/` (Japan → jp.adeliedraw.com, others → en.adeliedraw.com). The tool takes `--url` and `--name`.
 - Penguin variants `qr/adelie-pages-get-penguin.*` and `qr/adelie-draw-shop-penguin.*`: the user's wing-spread penguin in the centre, modules cleared along its outline, penguin navy #273777. The tool gained `--logo`, `--logo-ratio` and `--ink`; the icon-disc QRs were regenerated with the shared silhouette rule (same URLs, a few edge modules differ).
 - Canonical QRs are the app-icon disc versions for both the app and the shop, now 5400/4920 px (`--scale`, default 120 px/module) with the disc at native icon resolution.
+
+## 2026-11-14 · Google Play
+
+- Google Play links next to every App Store link: hero button, FAQ answer, about label and /info/ (4 languages).
+- Copy says the app runs on iPhone, iPad and Android; the "Android is in testing" lines are gone.
+- `/get/` (the QR landing) now sends Android phones to Google Play and shows both store buttons, of equal width, elsewhere. The QR image is unchanged.
