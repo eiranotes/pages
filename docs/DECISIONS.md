@@ -1,11 +1,15 @@
-# Decisions · 2026-09-08
+# Decisions
 
-User requested an independent introduction and deployment while preserving existing work.
-Use a separate repository and Pages route; do not replace eiranotes/pages or site/sol.
+Current rules by topic. When a rule changes, rewrite its line; do not keep superseded ones.
+
+## Base · 2026-09-08
+
+This repository (`eiranotes/pages`) is the canonical intro site; `site/sol` in the app repo is an archive.
 Use active app colors and LINE Seed from the app contract. Native CSS and JS keep the
 static introduction independent of app architecture and avoid new production dependencies.
-Use only existing illustration derivatives, page examples and non-personal QA app captures.
-Do not claim store availability, paid product pricing or planned cloud features.
+Use only existing illustration derivatives, page examples and store screenshots.
+State only what is live: store availability as checked on the public store pages, no paid prices
+or planned cloud features.
 Existing pack approvals and rights are not changed by this marketing implementation.
 
 Header refinement: reuse the already-published app-icon.webp without recoloring artwork.
@@ -20,9 +24,9 @@ Path, not a subdomain: `app.adeliedraw.com` is the only name pointed at GitHub P
 `*.adeliedraw.com` (get/go/pages…) is caught by a cafe24 wildcard and lands on the shop, so a
 subdomain needs a DNS change plus its own Pages repo for no gain (the QR stays version 5 either way).
 `get.js` sends iPhone/iPad (including iPadOS desktop UA) to the App Store link `app.js` has already
-moved to the visitor's storefront; Apple's page then opens the App Store app. Android redirects
-only when the page carries `a[data-play-store]` (the Play URL is commented in place; Play returns 404
-until release); until then Android and desktop see the choices in ko/en/ja/zh.
+moved to the visitor's storefront; Apple's page then opens the App Store app. Android goes to
+the `a[data-play-store]` link (Google Play, live 2026-11-14), which opens the Play Store app; desktop
+sees both buttons in ko/en/ja/zh. Store changes are made on the landing, never by reprinting the QR.
 The country-less `apps.apple.com/app/id…` was rejected: Apple sends it to `us`.
 QR art: no generated image. `tool/make_store_qr.py` cuts the white circle (with a thin ring of icon
 blue) from the app's committed icon, leaves out the modules beneath it (error correction H) and
@@ -45,9 +49,11 @@ its public page loads (checked kr/us/jp/tw/cn/gb/fr/de/hk, 2026-11-06 afternoon;
 morning). This supersedes "do not claim store availability". The hero's primary button, the FAQ
 answer and the about label link to the user-given Korean URL; `app.js` rewrites the storefront from
 the browser language so visitors land in their own country's store (Apple redirects storefronts it
-does not run to `us`, so no allowlist is kept). Android is described as in testing; no Play link.
-The /info/ page is static per language block, so its links are fixed to kr/us/jp/cn (zh block is zh-CN).
-The privacy policy still calls the app "공개 준비 중"; legal text is left for a separate review.
+does not run to `us`, so no allowlist is kept). The /info/ page is static per language block, so its links are fixed to kr/us/jp/cn (zh block is zh-CN).
+Google Play (2026-11-14, public listing checked): every App Store link on the intro page and /info/ has a
+Google Play link next to it (`https://play.google.com/store/apps/details?id=com.adeliedraw.adelieApp`,
+`a[data-play-store]`). It carries no country; /info/ adds `hl` per language block.
+Legal pages are changed only in a separate reviewed change (see TASKS).
 Pack covers were resynced to app main 379638c8: 43 covers (stained glass sets v1/v2 replaced by
 kc_0014–0024, stay home and food review added). No cover has a foil mask any more.
 
