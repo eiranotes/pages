@@ -62,3 +62,4 @@ Pack covers resynced to the app catalogue: 43 covers.
 - Google Play links next to every App Store link: hero button, FAQ answer, about label and /info/ (4 languages).
 - Copy says the app runs on iPhone, iPad and Android; the "Android is in testing" lines are gone.
 - `/get/` (the QR landing) now sends Android phones to Google Play and shows both store buttons, of equal width, elsewhere. The QR image is unchanged.
+- Privacy policy (ko): "현재 공개 준비 중인 앱" → "현재 출시된 앱", matching the other languages. Effective date unchanged.

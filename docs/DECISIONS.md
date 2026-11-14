@@ -53,7 +53,7 @@ does not run to `us`, so no allowlist is kept). The /info/ page is static per la
 Google Play (2026-11-14, public listing checked): every App Store link on the intro page and /info/ has a
 Google Play link next to it (`https://play.google.com/store/apps/details?id=com.adeliedraw.adelieApp`,
 `a[data-play-store]`). It carries no country; /info/ adds `hl` per language block.
-Legal pages are changed only in a separate reviewed change (see TASKS).
+Legal pages: wording that only states release status may be corrected without changing the effective date (2026-11-14, user decision).
 Pack covers were resynced to app main 379638c8: 43 covers (stained glass sets v1/v2 replaced by
 kc_0014–0024, stay home and food review added). No cover has a foil mask any more.
 
