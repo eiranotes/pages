@@ -3,9 +3,9 @@
 // All published content remains available without JavaScript.
 document.querySelectorAll('[data-enhanced]').forEach(element => { element.hidden = false; });
 
-// App Store links point at the Korean storefront. Swap in the visitor's storefront from the first
-// browser language that names (or implies, e.g. "ja" → JP) a region; Apple sends storefronts
-// it does not run to the US store.
+// App Store links carry the Korean storefront (intro page) or none (/get/). Swap in the visitor's
+// storefront from the first browser language that names (or implies, e.g. "ja" → JP) a region;
+// Apple sends storefronts it does not run, and country-less links, to the US store.
 const appStoreLinks = document.querySelectorAll('a[data-app-store]');
 if (appStoreLinks.length && typeof Intl.Locale === 'function') {
   let storefront = null;
@@ -15,8 +15,8 @@ if (appStoreLinks.length && typeof Intl.Locale === 'function') {
       if (region && /^[A-Z]{2}$/.test(region)) { storefront = region.toLowerCase(); break; }
     } catch { /* ignore malformed language tags */ }
   }
-  if (storefront && storefront !== 'kr') {
-    appStoreLinks.forEach(link => { link.href = link.href.replace('apps.apple.com/kr/', `apps.apple.com/${storefront}/`); });
+  if (storefront) {
+    appStoreLinks.forEach(link => { link.href = link.href.replace(/apps\.apple\.com\/(?:[a-z]{2}\/)?app\//, `apps.apple.com/${storefront}/app/`); });
   }
 }
 

@@ -14,8 +14,9 @@ Site CSS keeps legacy variable names as aliases of `--ad-*`; new rules use `--ad
 Existing brand artwork supplies color; no generated art or simulated app screenshots.
 Images are WebP derivatives. LINE Seed fonts include their full original OFL notice.
 
-App Store links (`a[data-app-store]`) default to https://apps.apple.com/kr/app/adelie-pages/id6822323315.
-`public/app.js` swaps `kr` for the visitor's storefront from the first browser language with a region
+App Store links (`a[data-app-store]`) default to https://apps.apple.com/kr/app/adelie-pages/id6822323315
+(`/get/` uses the country-less https://apps.apple.com/app/adelie-pages/id6822323315 and English as its default).
+`public/app.js` swaps in the visitor's storefront from the first browser language with a region
 (`Intl.Locale.maximize()`, so `ja` → `jp`, `zh-Hant` → `tw`); Apple sends unknown storefronts to `us`.
 Canonical QR codes (decided 2026-11-09): the app-icon disc versions, `qr/adelie-pages-get.*` and
 `qr/adelie-draw-shop.*`, so the app and shop codes match. The `*-penguin.*` files are an unused trial.

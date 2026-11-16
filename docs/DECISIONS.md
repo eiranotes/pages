@@ -28,6 +28,9 @@ moved to the visitor's storefront; Apple's page then opens the App Store app. An
 the `a[data-play-store]` link (Google Play, live 2026-11-14), which opens the Play Store app; desktop
 sees both buttons in ko/en/ja/zh. Store changes are made on the landing, never by reprinting the QR.
 The country-less `apps.apple.com/app/id…` was rejected: Apple sends it to `us`.
+Neutral default (2026-11-16, user request): the QR is used abroad, so `/get/` no longer falls back to Korean.
+Its HTML is English with the country-less App Store link (only reached when no region can be read;
+`app.js` rewrites it to the visitor's storefront, `ko` → `kr`). The Korean intro page keeps `kr`.
 QR art: no generated image. `tool/make_store_qr.py` cuts the white circle (with a thin ring of icon
 blue) from the app's committed icon, leaves out the modules beneath it (error correction H) and
 decodes the result at 132–2250 px. Outputs live in `qr/`, outside the deployed `public/`.

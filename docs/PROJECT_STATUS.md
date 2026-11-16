@@ -18,7 +18,8 @@ Last updated 2026-11-14.
   by browser language (`app.js`); the Play link has no country (Play localises it).
 - `/info/` (4 languages) links both stores; App Store fixed per block to kr/us/jp/cn, Play with `hl`.
 - `/get/`: iPhone/iPad → App Store (storefront by language), Android → Google Play, other devices see
-  both buttons in ko/en/ja/zh.
+  both buttons in ko/en/ja/zh. Neutral default: English HTML and a country-less App Store link
+  (Apple serves `us` when no region is found); Korean only for ko browsers.
 
 ## QR
 
